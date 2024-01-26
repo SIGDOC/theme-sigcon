@@ -1,0 +1,1 @@
+{"version":3,"sources":["admin/_disables-and-overwrites.scss"],"names":[],"mappings":"AAEE,4CACE,8BAAA","file":"../admin-style.css","sourcesContent":["body.wp-editor {\n  // SVGs hovering bugs preview image so we disable hover on them\n  .block-editor-block-icon svg {\n    pointer-events: none !important;\n  }\n}\n"]}

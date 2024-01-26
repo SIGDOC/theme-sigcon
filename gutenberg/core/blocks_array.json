@@ -1,0 +1,14 @@
+{
+  "blocks_array": [
+    "image",
+    "sigcon-landing-cards",
+    "sigcon-page-intro-card",
+    "sigcon-section-content",
+    "sigcon-page-card-paragraph-feature",
+    "sigcon-poster-session-cards",
+    "sigdoc-schedule",
+    "sigcon-cards-flex-thin",
+    "sigcon-cards-left-float-img-and-txt",
+    "sigcon-sponsor-gallery"
+  ]
+}

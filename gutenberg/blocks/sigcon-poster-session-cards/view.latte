@@ -1,0 +1,31 @@
+<section id="posters-sessions-container"
+         class="article-wrap posters__container"
+         role="region"
+         aria-label="Poster sessions for the conference"
+         n:if="!empty($panels)">
+
+    <article n:foreach="$panels as $panel"
+             n:ifcontent
+             class="posters__article_card">
+      {* POSTER THUMBNAIL *}
+      <div class="posters__article_card_thumbnail">
+        <a href="{$panel['image_high_res_poster_url']['src']|noescape}">
+          {tr_get_media($panel['image_poster_thumbnail'], false)}
+        </a>
+      </div>
+      {* POSTER INFO *}
+      <div class="posters__article_card_info">
+        <h3 n:ifcontent>
+          {$panel['poster_title']['text']|noescape}
+        </h3>
+        <ul>
+          <li n:ifcontent><strong>Presenter</strong>: {$panel['presenter_name']['text']|noescape}</li>
+          <li n:ifcontent><strong>Title</strong>: {$panel['presenter_title']['text']|noescape}</li>
+          <li n:ifcontent><strong>Affiliation</strong>: {$panel['presenter_affiliation']['text']|noescape}</li>
+          <li n:ifcontent><strong>Abstract</strong>: {$panel['abstract']['text']|noescape}</li>
+          <li><a href="{$panel['image_high_res_poster_url']['src']|noescape}">View High Resolution Version</li>
+        </ul>
+      </div>
+      <hr>
+    </article>
+</section>

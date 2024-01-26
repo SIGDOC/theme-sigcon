@@ -1,0 +1,11 @@
+{
+  "block_meta": {
+    "BLOCK_REGISTER_NAME": "sigdoc-schedule",
+    "BLOCK_TITLE": "SIGDOC Schedule",
+    "keywords": ["conference schedule", "schedule"],
+    "hasSidebar": true,
+    "hasExample": true
+  },
+
+  "attributes": {}
+}

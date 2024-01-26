@@ -1,0 +1,71 @@
+.footer {
+  background: var(--foregroundColor);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: var(--backgroundColor);
+
+  .container {
+    &> * {
+      margin-top: 15px;
+      padding: 0 2rem;
+    }
+
+    h2,h3,h4,h5,h6 {
+      font-size: 16px;
+    }
+    h2,h3,h4,h5,h6,a {
+      color: var(--accentColor);
+    }
+    p,ul,li {
+      font-size: 14px;
+      color: var(--backgroundColor);
+    }
+    .footer__committee_container ul {
+      margin: 0 0 0 12px;
+      padding: 0;
+      
+      li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .menu ul {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      gap: 1rem;
+      color: var(--accentColor);
+
+      li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      li:nth-child(n+2) {
+        margin-left: 0.5rem;
+      }
+
+    }
+
+    a {
+      text-decoration: none;
+      transition: all 0.2s;
+
+      &:hover,
+      &:active {
+        color: var(--accentShade2);
+        text-decoration: underline;
+        transition: all 0.2s;
+      }
+    }
+
+  }
+}
+
+// caused by google extension
+#blockColorblindContent {
+  display: none !important;
+}

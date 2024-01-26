@@ -1,0 +1,94 @@
+{
+  "block_meta": {
+    "BLOCK_REGISTER_NAME": "sigcon-landing-cards",
+    "BLOCK_TITLE": "SIGDOC Conference Animated CTA Cards",
+    "keywords": ["cards", "animated"],
+    "hasSidebar": false,
+    "hasExample": true
+  },
+
+  "attributes": {
+    "panels": {
+      "type": "array",
+      "field_meta": {
+        "type": "repeater",
+        "label": "Create New Section Panels",
+        "grid": 2,
+        "subfields": {
+          "main_heading": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Heading for the Panel"
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "keyword_1": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "First Keyword for the Panel (1-2 words)",
+              "help": "Presented above the image in the layout.",
+              "max_chars": 15
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "keyword_2": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Second Keyword for the Panel (1-2 words)",
+              "help": "Presented above the image in the layout.",
+              "max_chars": 15
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "keyword_3": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Third Keyword for the Panel (1-2 words)",
+              "help": "Presented above the image in the layout.",
+              "max_chars": 15
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "main_image": {
+            "type": "object",
+            "field_meta": {
+              "type": "image",
+              "label": "Main Panel Image"
+            },
+            "default": {
+              "src": "",
+              "alt": "",
+              "subtype": "",
+              "id": null
+            }
+          },
+          "panel_cta_link": {
+            "type": "object",
+            "field_meta": {
+              "type": "cta",
+              "label": "Panel CTA Link",
+              "help": "Either a link to a page or a file"
+            },
+            "default": {
+              "url": "",
+              "target": false
+            }
+          }
+        }
+      },
+      "default": []
+    }
+  }
+}

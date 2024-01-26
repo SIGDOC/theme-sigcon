@@ -1,0 +1,58 @@
+<!-- START NEW CARD SECTION -->
+<section n:if="!empty($cards)"
+         class="sigcon-relative card__sections floating_cards"
+         role="region"
+         aria-labelledby="{$section_id['text']|noescape}">
+
+  <div class="cards__main_external_wrapper card__regular_wrapped_flex">
+    
+    <h2 n:ifcontent id="{$section_id['text']|noescape}">{$section_h2['text']}</h2>
+    
+    <div class="cards__sub_container">
+    
+      <!-- Start Card Loop -->
+      <div class="float_left_card__inner_wrapper"
+            n:foreach="$cards as $card"
+            n:ifcontent>
+
+        <div class="card__main_image">
+          {* IF EMPTY, USE PLACEHOLDER *}
+          {if empty($card['main_image']['src'])}
+            {* <script type="text/javascript">
+              let tr_theme_url = {get_bloginfo("template_url")};
+              let img = Object.assign(document.createElement('img'), {
+                class: "card__main_image",
+                href: 'https://www.google.com/',
+                innerHTML: 'This is a link'
+              });
+            </script> *}
+            <img class="card__main_image" src="{esc_url( home_url( '/wp-content/themes/theme-sigcon/assets/img/placeholder-sigdoc-logo.png' ) )}" alt="" />
+            <?php esc_url( wp_get_attachment_url( get_theme_mod( 'custom_logo' ) ) ) ?>
+          {/if}
+
+          {if !empty($card['main_image']['src'])}
+            {tr_get_media($card['main_image'], true)}
+          {/if}
+        </div>
+
+        <div class="card__desc_wrapper">
+          <h3 class="card__main_name" n:ifcontent>{$card['main_name']['text']}</h3>
+          <p class="card__sub_name" n:ifcontent>{$card['sub_name']['text']}</p>
+          {* <p class="card__link"></p> *}
+          <p n:ifcontent>
+            {$card['paragraph']['text']|noescape}
+          </p>
+        </div>
+
+        <div class="cta-container">
+          <span class="card-cta">
+            {tr_a($card['link'])}
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</section>

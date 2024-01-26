@@ -1,0 +1,96 @@
+{
+  "block_meta": {
+    "BLOCK_REGISTER_NAME": "sigcon-page-intro-card",
+    "BLOCK_TITLE": "SIGDOC Conference Introductory Card for a Page",
+    "keywords": ["cards", "preface", "introductory"],
+    "hasSidebar": false,
+    "hasExample": true
+  },
+
+  "attributes": {
+    "aria_label": {
+      "type": "object",
+      "field_meta": {
+        "type": "text",
+        "label": "ARIA Label for the Introductory Panel Content Area",
+        "help":" This is important for accessibility. Provide a short description of this section's topic."
+      },
+      "default": {
+        "text": ""
+      }
+    },
+    "main_heading": {
+      "type": "object",
+      "field_meta": {
+        "type": "text",
+        "label": "Heading for the Introductory Panel"
+      },
+      "default": {
+        "text": ""
+      }
+    },
+    "main_content": {
+      "type": "object",
+      "field_meta": {
+        "type": "freeform",
+        "help": "This is a rich-text content field for the content before the committee list. Keep it brief."
+      },
+      "default": {
+        "text": ""
+      }
+    },
+    "roles": {
+      "type": "array",
+      "field_meta": {
+        "type": "repeater",
+        "label": "Create New Conference Committee Role",
+        "grid": 2,
+        "subfields": {
+          "title": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Committee Title"
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "name": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Committee Member Name"
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "affiliation": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Committee Member Affiliation",
+              "help":"Enter university, company, or organization"
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "country": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Committee Member Country",
+              "help": "United States, Ghana, Mexico, etc."
+            },
+            "default": {
+              "text": ""
+            }
+          }
+        }
+      },
+      "default": []
+    }
+  }
+}

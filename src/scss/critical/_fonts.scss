@@ -1,0 +1,153 @@
+// HEADINGS: Exo 2
+@font-face {
+  font-family: 'Exo 2';
+  font-weight: 100;
+  src: url('/conference/shared/fonts/Exo_2/static/Exo2-ExtraLight.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-weight: 100;
+  font-style: italic;
+  src: url('/conference/shared/fonts/Exo_2/static/Exo2-ExtraLightItalic.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-weight: 200;
+  src: url('/conference/shared/fonts/Exo_2/static/Exo2-Light.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-weight: 300;
+  src: url('/conference/shared/fonts/Exo_2/static/Exo2-Medium.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-weight: 400;
+  src: url('/conference/shared/fonts/Exo_2/static/Exo2-Regular.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-weight: 400;
+  font-style: italic;
+  src: url('/conference/shared/fonts/Exo_2/static/Exo2-Italic.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-weight: 500;
+  src: url('/conference/shared/fonts/Exo_2/static/Exo2-SemiBold.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-weight: 500;
+  font-style: italic;
+  src: url('/conference/shared/fonts/Exo_2/static/Exo2-SemiBoldItalic.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-weight: 600;
+  src: url('/conference/shared/fonts/Exo_2/static/Exo2-ExtraBold.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-weight: 600;
+  font-style: italic;
+  src: url('/conference/shared/fonts/Exo_2/static/Exo2-ExtraBoldItalic.ttf')  format('truetype');
+}
+
+// COPY: Poppins
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 100;
+  font-style: normal;
+  src: url('/conference/shared/fonts/Poppins/Poppins-Thin.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 100;
+  font-style: italic;
+  src: url('/conference/shared/fonts/Poppins/Poppins-ThinItalic.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 200;
+  font-style: normal;
+  src: url('/conference/shared/fonts/Poppins/Poppins-ExtraLight.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 200;
+  font-style: italic;
+  src: url('/conference/shared/fonts/Poppins/Poppins-ExtraLightItalic.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 300;
+  font-style: normal;
+  src: url('/conference/shared/fonts/Poppins/Poppins-Light.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 300;
+  font-style: italic;
+  src: url('/conference/shared/fonts/Poppins/Poppins-LightItalic.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/conference/shared/fonts/Poppins/Poppins-Medium.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: italic;
+  src: url('/conference/shared/fonts/Poppins/Poppins-MediumItalic.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-style: normal;
+  src: url('/conference/shared/fonts/Poppins/Poppins-Regular.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-style: italic;
+  src: url('/conference/shared/fonts/Poppins/Poppins-Italic.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-style: normal;
+  src: url('/conference/shared/fonts/Poppins/Poppins-SemiBold.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-style: italic;
+  src: url('/conference/shared/fonts/Poppins/Poppins-SemiBoldItalic.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-style: normal;
+  src: url('/conference/shared/fonts/Poppins/Poppins-Bold.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-style: italic;
+  src: url('/conference/shared/fonts/Poppins/Poppins-BoldItalic.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 800;
+  font-style: normal;
+  src: url('/conference/shared/fonts/Poppins/Poppins-ExtraBold.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 800;
+  font-style: italic;
+  src: url('/conference/shared/fonts/Poppins/Poppins-ExtraBoldItalic.ttf')  format('truetype');
+}

@@ -1,0 +1,23 @@
+<div class="feature-card-container">
+  <section role="region" 
+        aria-label="{$aria_label['text']|noescape}">
+
+    <div n:ifcontent class="panel panel__preface">
+      <div class="thumb">
+        <div class="inner">
+
+          <!-- Start paragraphs -->
+          <div n:if="!empty($elements)">
+            <span n:ifcontent n:foreach="$elements as $el">
+              <{$el['element']['text']} class="{$el['selected_feature']['value']|noescape}">
+                {$el['content']['text']|noescape}
+              </{$el['element']['text']}>
+            </span>
+          </div>
+          
+        </div><!--/inner-->
+      </div><!--/thumb-->
+    </div><!--/panel-->
+    
+  </section>
+</div>

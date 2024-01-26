@@ -1,0 +1,76 @@
+{
+  "block_meta": {
+    "BLOCK_REGISTER_NAME": "sigcon-page-card-paragraph-feature",
+    "BLOCK_TITLE": "SIGDOC Feature Card with Custom Text Effects",
+    "keywords": ["cards", "preface", "introductory", "text effects"],
+    "hasSidebar": false,
+    "hasExample": true
+  },
+
+  "attributes": {
+    "aria_label": {
+      "type": "object",
+      "field_meta": {
+        "type": "text",
+        "label": "ARIA Label for the Introductory Panel Content Area",
+        "help":" This is important for accessibility. Provide a short description of this section's topic."
+      },
+      "default": {
+        "text": ""
+      }
+    },
+    "elements": {
+      "type": "array",
+      "field_meta": {
+        "type": "repeater",
+        "label": "Create Text Elements with Optional Effects",
+        "grid": 1,
+        "subfields": {
+          "element": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "New Element"
+            },
+            "default": {
+              "text": "p"
+            }
+          },
+          "content": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "variation":"long",
+              "label": "Content for Element"
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "selected_feature": {
+            "type": "object",
+            "field_meta": {
+              "type": "select",
+              "options": [
+                {
+                  "label": "None", "value": ""
+                },
+                {
+                  "label": "Dropped-Case Letter", "value": "drop_case_first_letter"
+                },
+                {
+                  "label": "First-Line Bolded and Uppercase", "value": "first_line__bolded_uppercase"
+                }
+              ],
+              "label": "Select an optional feature for the paragraph"
+            },
+            "default": {
+              "value": ""
+            }
+          }
+        }
+      },
+      "default": []
+    }
+  }
+}

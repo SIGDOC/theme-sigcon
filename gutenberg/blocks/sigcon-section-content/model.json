@@ -1,0 +1,32 @@
+{
+  "block_meta": {
+    "BLOCK_REGISTER_NAME": "sigcon-section-content",
+    "BLOCK_TITLE": "SIGDOC Conference Page Template",
+    "keywords": ["main content", "sections"],
+    "hasSidebar": false,
+    "hasExample": true
+  },
+
+  "attributes": {
+    "main_heading": {
+      "type": "object",
+      "field_meta": {
+        "type": "text",
+        "label": "Heading for the Section"
+      },
+      "default": {
+        "text": ""
+      }
+    },
+    "main_content": {
+      "type": "object",
+      "field_meta": {
+        "type": "freeform",
+        "help": "This is a content field for the main content area"
+      },
+      "default": {
+        "text": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "block_meta": {
+    "BLOCK_REGISTER_NAME": "sigcon-poster-session-cards",
+    "BLOCK_TITLE": "SIGDOC Conference Poster Session Cards",
+    "keywords": ["cards", "poster sessions"],
+    "hasSidebar": false,
+    "hasExample": true
+  },
+
+  "attributes": {
+    "panels": {
+      "type": "array",
+      "field_meta": {
+        "type": "repeater",
+        "label": "Create New Poster Cards",
+        "grid": 2,
+        "subfields": {
+          "poster_title": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Poster Title (h3)"
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "abstract": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "variation":"long",
+              "label": "Poster Abstract",
+              "help": "Add the abstract provided by the presenter"
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "presenter_name": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Presenter Name"
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "presenter_title": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Presenter Title",
+              "help": "For example, Assistant Professor of Technical Communication"
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "presenter_affiliation": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Presenter Affiliation",
+              "help": "For example, Virginia Tech"
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "image_poster_thumbnail": {
+            "type": "object",
+            "field_meta": {
+              "type": "image",
+              "label": "Thumbnail Image (low res) for Card"
+            },
+            "default": {
+              "src": "",
+              "alt": "",
+              "subtype": "",
+              "id": null
+            }
+          },
+          "image_high_res_poster_url": {
+            "type": "object",
+            "field_meta": {
+              "type": "image",
+              "label": "High Resolution Image for Link"
+            },
+            "default": {
+              "src": "",
+              "alt": "",
+              "subtype": "",
+              "id": null
+            }
+          }
+        }
+      },
+      "default": []
+    }
+  }
+}
