@@ -23,7 +23,7 @@ final class Template65d2177039 extends Latte\Runtime\Template
 		echo LR\Filters::escapeHtmlText(get_bloginfo('title')) /* line 8 */;
 		echo '</p>
       <p>
-        Fairfax, VA | October 20-22, 2024
+        Arlington, VA | October 20-22, 2024
       </p>
     </div>
     

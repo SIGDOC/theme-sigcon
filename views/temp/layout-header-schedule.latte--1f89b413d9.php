@@ -24,49 +24,50 @@ final class Template1f89b413d9 extends Latte\Runtime\Template
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<!-- Open Graph -->
 	<meta name="og:type" content="conference"/>
-	<meta name="og:image" content="https://sigdoc.acm.org/conference/2023/wp-content/uploads/2023/02/sigdoc-23-square-banner.jpg"/>
-	<meta name="og:site_name" content="ACM SIGDOC 2023 Conference"/>
-	<meta name="og:description" content="SIGDOC 2023 Conferece - On Methods and Methodologies - Orlando, FL - October 26-28, 2023"/>
+	<?php if(!is_front_page() && !is_home() && has_post_thumbnail()) : ?><meta property="og:image" content="(echo thumbnail url here)"/><?php else : ?><meta property="og:image" content="http://url_to_some_default_image.jpg"/><?php endif; ?>
+	<meta name="og:site_name" content="';
+		echo LR\Filters::escapeHtmlAttr(get_bloginfo('title')) /* line 11 */;
+		echo '"/>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
 
 	';
-		echo LR\Filters::escapeHtmlText(wp_head()) /* line 18 */;
+		echo LR\Filters::escapeHtmlText(wp_head()) /* line 17 */;
 		echo '
 
 	<style id="critical-css" type="text/css">
 		';
-		echo file_get_contents(get_template_directory() . '/prod/global/critical.css') /* line 21 */;
+		echo file_get_contents(get_template_directory() . '/prod/global/critical.css') /* line 20 */;
 		echo '
 	</style>
 
 	<link rel="preload" href="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl(get_template_directory_uri())) /* line 24 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl(get_template_directory_uri())) /* line 23 */;
 		echo '/prod/global/style.css" as="style">
 	<link rel="stylesheet" href="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl(get_template_directory_uri())) /* line 25 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl(get_template_directory_uri())) /* line 24 */;
 		echo '/prod/global/style.css">
 	<script type="text/javascript">
 		var tr_theme_url = ';
-		echo LR\Filters::escapeJs(get_bloginfo('template_url')) /* line 27 */;
+		echo LR\Filters::escapeJs(get_bloginfo('template_url')) /* line 26 */;
 		echo ';
 		var tr_site_url = ';
-		echo LR\Filters::escapeJs(esc_url(home_url('/'))) /* line 28 */;
+		echo LR\Filters::escapeJs(esc_url(home_url('/'))) /* line 27 */;
 		echo ';
 	</script>
 	<script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl(get_template_directory_uri())) /* line 30 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl(get_template_directory_uri())) /* line 29 */;
 		echo '/prod/global/vendor/papaparse.js"></script>
 </head>
 
 <body ';
-		echo body_class() /* line 33 */;
+		echo body_class() /* line 32 */;
 		echo '>
 
 ';
-		$this->createTemplate(tr_view_path('/layout/main-menu'), $this->params, 'include')->renderToContentType('html') /* line 35 */;
+		$this->createTemplate(tr_view_path('/layout/main-menu'), $this->params, 'include')->renderToContentType('html') /* line 34 */;
 		echo '	
 	<header class="bg-logo-container" role="banner" aria-labelledby="main-title">
 
@@ -177,13 +178,13 @@ final class Template1f89b413d9 extends Latte\Runtime\Template
 				<div class="main-title-container">
 					<h1 class="main-title" id="main-title">
 						';
-		echo LR\Filters::escapeHtmlText(get_the_title()) /* line 145 */;
+		echo LR\Filters::escapeHtmlText(get_the_title()) /* line 144 */;
 		echo '
 					</h1>
 				</div>
 				<h2 class="sub-title">
 					';
-		echo LR\Filters::escapeHtmlText(get_bloginfo('description')) /* line 149 */;
+		echo LR\Filters::escapeHtmlText(get_bloginfo('description')) /* line 148 */;
 		echo '
 				</h2>
 			</div>
@@ -191,11 +192,11 @@ final class Template1f89b413d9 extends Latte\Runtime\Template
 	</header>
 
 	<main class="main-content-no-subtitle ';
-		echo LR\Filters::escapeHtmlAttr(tr_is_ie() ? 'main_is_ie' : '') /* line 155 */;
+		echo LR\Filters::escapeHtmlAttr(tr_is_ie() ? 'main_is_ie' : '') /* line 154 */;
 		echo '">
 
 		';
-		echo LR\Filters::escapeHtmlText(the_content()) /* line 157 */;
+		echo LR\Filters::escapeHtmlText(the_content()) /* line 156 */;
 		echo '
 
 		<article id="schedule__container" class="schedule__container"></article>';

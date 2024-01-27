@@ -28,43 +28,44 @@ final class Template2c1dfc9bc3 extends Latte\Runtime\Template
 	<meta name="og:site_name" content="';
 		echo LR\Filters::escapeHtmlAttr(get_bloginfo('title')) /* line 11 */;
 		echo '"/>
+
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
 
 	';
-		echo LR\Filters::escapeHtmlText(wp_head()) /* line 18 */;
+		echo LR\Filters::escapeHtmlText(wp_head()) /* line 17 */;
 		echo '
 
 	<style id="critical-css" type="text/css">
 		';
-		echo file_get_contents(get_template_directory() . '/prod/global/critical.css') /* line 21 */;
+		echo file_get_contents(get_template_directory() . '/prod/global/critical.css') /* line 20 */;
 		echo '
 	</style>
 
 	<link rel="preload" href="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl(get_template_directory_uri())) /* line 24 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl(get_template_directory_uri())) /* line 23 */;
 		echo '/prod/global/style.css" as="style">
 	<link rel="stylesheet" href="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl(get_template_directory_uri())) /* line 25 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl(get_template_directory_uri())) /* line 24 */;
 		echo '/prod/global/style.css">
 
 	<script type="text/javascript">
 		var tr_theme_url = ';
-		echo LR\Filters::escapeJs(get_bloginfo('template_url')) /* line 28 */;
+		echo LR\Filters::escapeJs(get_bloginfo('template_url')) /* line 27 */;
 		echo ';
 		var tr_site_url = ';
-		echo LR\Filters::escapeJs(esc_url(home_url('/'))) /* line 29 */;
+		echo LR\Filters::escapeJs(esc_url(home_url('/'))) /* line 28 */;
 		echo ';
 	</script>
 </head>
 
 <body ';
-		echo body_class() /* line 33 */;
+		echo body_class() /* line 32 */;
 		echo '>
 
 ';
-		$this->createTemplate(tr_view_path('/layout/main-menu'), $this->params, 'include')->renderToContentType('html') /* line 35 */;
+		$this->createTemplate(tr_view_path('/layout/main-menu'), $this->params, 'include')->renderToContentType('html') /* line 34 */;
 		echo '	
 	<header class="bg-logo-container" role="banner" aria-labelledby="main-title">
 
@@ -175,13 +176,13 @@ final class Template2c1dfc9bc3 extends Latte\Runtime\Template
 				<div class="main-title-container">
 					<h1 class="main-title" id="main-title">
 						';
-		echo LR\Filters::escapeHtmlText(get_the_title()) /* line 145 */;
+		echo LR\Filters::escapeHtmlText(get_the_title()) /* line 144 */;
 		echo '
 					</h1>
 				</div>
 				<h2 class="sub-title">
 					';
-		echo LR\Filters::escapeHtmlText(get_bloginfo('description')) /* line 149 */;
+		echo LR\Filters::escapeHtmlText(get_bloginfo('description')) /* line 148 */;
 		echo '
 				</h2>
 			</div>
@@ -189,7 +190,7 @@ final class Template2c1dfc9bc3 extends Latte\Runtime\Template
 	</header>
 
 	<main class="main-content ';
-		echo LR\Filters::escapeHtmlAttr(tr_is_ie() ? 'main_is_ie' : '') /* line 155 */;
+		echo LR\Filters::escapeHtmlAttr(tr_is_ie() ? 'main_is_ie' : '') /* line 154 */;
 		echo '">';
 	}
 }

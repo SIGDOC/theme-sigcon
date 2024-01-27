@@ -14,34 +14,33 @@ final class Templateb27ee8ae21 extends Latte\Runtime\Template
 		echo '<div id="landing-cards-wrap">
 ';
 		if (!empty($panels)) /* line 5 */ {
-			echo '  <main class="landing-cards-flex-container"
-        role="main"
-        aria-label="Main action items for the conference">
+			echo '  <section class="landing-cards-flex-container"
+        role="region"
+        aria-label="Action items for the conference">
 
 ';
 			foreach ($panels as $panel) /* line 7 */ {
 				ob_start(fn() => '');
 				try {
-					echo '    <section
-             class="panel" 
-             role="region">';
+					echo '    <article
+             class="panel">';
 					ob_start();
 					try {
 						echo '
       <a href="';
-						echo LR\Filters::safeUrl($panel['panel_cta_link']['url']) /* line 11 */;
+						echo LR\Filters::safeUrl($panel['panel_cta_link']['url']) /* line 10 */;
 						echo '">
 ';
 						ob_start(fn() => '');
 						try {
 							echo '        <h2 aria-label="';
-							echo $panel['main_heading']['text'] /* line 12 */;
+							echo $panel['main_heading']['text'] /* line 11 */;
 							echo '" data-splitting="words">';
 							ob_start();
 							try {
 								echo '
           ';
-								echo $panel['main_heading']['text'] /* line 13 */;
+								echo $panel['main_heading']['text'] /* line 12 */;
 								echo '
         ';
 
@@ -66,11 +65,11 @@ final class Templateb27ee8ae21 extends Latte\Runtime\Template
 							echo '        <p>';
 							ob_start();
 							try {
-								echo $panel['keyword_1']['text'] /* line 17 */;
+								echo $panel['keyword_1']['text'] /* line 16 */;
 								echo ' &bull; ';
-								echo $panel['keyword_2']['text'] /* line 17 */;
+								echo $panel['keyword_2']['text'] /* line 16 */;
 								echo ' &bull; ';
-								echo $panel['keyword_3']['text'] /* line 17 */;
+								echo $panel['keyword_3']['text'] /* line 16 */;
 
 							} finally {
 								$ʟ_ifc[2] = rtrim(ob_get_flush()) === '';
@@ -90,13 +89,13 @@ final class Templateb27ee8ae21 extends Latte\Runtime\Template
 						ob_start(fn() => '');
 						try {
 							echo '          <a class="thumb-link" href="';
-							echo LR\Filters::safeUrl($panel['panel_cta_link']['url']) /* line 19 */;
+							echo LR\Filters::safeUrl($panel['panel_cta_link']['url']) /* line 18 */;
 							echo '">';
 							ob_start();
 							try {
 								echo '
             ';
-								echo LR\Filters::escapeHtmlText(tr_get_media($panel['main_image'], false)) /* line 20 */;
+								echo LR\Filters::escapeHtmlText(tr_get_media($panel['main_image'], false)) /* line 19 */;
 								echo '
           ';
 
@@ -120,7 +119,7 @@ final class Templateb27ee8ae21 extends Latte\Runtime\Template
 					} finally {
 						$ʟ_ifc[0] = rtrim(ob_get_flush()) === '';
 					}
-					echo '</section>
+					echo '</article>
 ';
 
 				} finally {
@@ -134,7 +133,7 @@ final class Templateb27ee8ae21 extends Latte\Runtime\Template
 			}
 
 			echo '    
-  </main>
+  </section>
 ';
 		}
 		echo '</div>
