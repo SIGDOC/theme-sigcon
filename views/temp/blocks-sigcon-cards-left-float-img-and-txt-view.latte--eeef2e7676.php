@@ -62,7 +62,9 @@ final class Templateeeef2e7676 extends Latte\Runtime\Template
         <div class="card__main_image">
 ';
 						if (empty($card['main_image']['src'])) /* line 20 */ {
-							echo '            <img class="card__main_image" src="https://sigdoc.acm.org/conference/2023/wp-content/uploads/2023/09/sigdoc-logo.png" alt="" />
+							echo '            <img class="card__main_image" src="';
+							echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl(esc_url(home_url('/wp-content/themes/theme-sigcon/assets/img/placeholder-sigdoc-logo.png')))) /* line 29 */;
+							echo '" alt="" />
             <?php esc_url( wp_get_attachment_url( get_theme_mod( \'custom_logo\' ) ) ) ?>
 ';
 						}
