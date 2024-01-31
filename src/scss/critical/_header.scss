@@ -53,7 +53,7 @@ $desktop-menu-mq: 'min-width: #{$desktop-mq}';
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
     padding: 10px 15px;
   }
 

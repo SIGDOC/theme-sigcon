@@ -1,8 +1,8 @@
 {
   "block_meta": {
-    "BLOCK_REGISTER_NAME": "sigdoc-hero-colorful-title",
-    "BLOCK_TITLE": "SIGDOC CON - Animated Logo Hero Banner Title",
-    "keywords": ["hero", "title", "animated", "logo"],
+    "BLOCK_REGISTER_NAME": "sigcon-hero-colorful-title",
+    "BLOCK_TITLE": "SIGCON - Animated Logo Hero Banner Title",
+    "keywords": ["hero", "title", "animated", "logo", "sigcon"],
     "hasSidebar": false,
     "hasExample": true
   },

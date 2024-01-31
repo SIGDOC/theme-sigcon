@@ -25,7 +25,16 @@ Current blocks include:
 	- **Notes**:
 - **Intro card for a page** <br> <img src="gutenberg/blocks/sigcon-page-intro-card/example.jpg" width="75px" style="float:left;margin-right:15px" />
 	- **Path**: `gutenberg/blocks/sigcon-page-intro-card`
-	- **Notes**: Good to use as the first paragraph on a page
+	- **Notes**: Good to use as the first paragraph on a page.
+- **Cards for a posters** <br> <img src="gutenberg/blocks/sigcon-poster-session-cards/example.jpg" width="75px" style="float:left;margin-right:15px" />
+	- **Path**: `gutenberg/blocks/sigcon-poster-session-cards`
+	- **Notes**: If featuring posters on the site.
+- **Accessible landmark section regions of content** <br> <img src="gutenberg/blocks/sigcon-section-content/example.jpg" width="75px" style="float:left;margin-right:15px" />
+	- **Path**: `gutenberg/blocks/sigcon-section-content`
+	- **Notes**: Create accessbile landmarks to break up larger/longer pages of content.
+- **Sponsors Gallery** <br> <img src="gutenberg/blocks/sigcon-sponsor-gallery/example.jpg" width="75px" style="float:left;margin-right:15px" />
+	- **Path**: `gutenberg/blocks/sigcon-sponsor-gallery`
+	- **Notes**: Create a gallery of sponsor logos, where each logo can be provided a URL to their desired site.
 
 ## GUTENBERG BLOCK LESSONS LEARNED
 
