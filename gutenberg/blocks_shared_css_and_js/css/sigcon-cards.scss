@@ -1,7 +1,6 @@
 /* PAGE Cards */
 
 .card__sections {
-  // padding: 50px 50px 90px 50px !important;
 
   .cards__main_external_wrapper {
     h2 {
@@ -26,7 +25,7 @@
         gap: 1em;
         padding: 1.75em;
         margin: 3em 0 3em 0;
-        box-shadow: 5px 2px 6px -1px var(--primaryColor);
+        box-shadow: 1px 2px 2px -1px var(--primaryColor);
 
         .card__main_image { 
           flex: 1 0 250px;
@@ -34,7 +33,7 @@
           img {
             width: 270px;
             border-radius: 50%;
-            box-shadow: 4px 0px 10px -2px #795548b8;
+            box-shadow: 4px 1px 2px -3px var(--secondaryShade5);
           }
         }
 
@@ -44,6 +43,28 @@
         }
       }
     }
+  }
+
+  // Remove WP defaults for images
+  & .card__main_image {
+    .tr-img-wrap-outer {
+      --size-w-original: 100% !important;
+      --size-h-original: 100% !important;
+      position: initial !important;
+      width: 100% !important;
+    }
+
+    .tr-img-wrap {
+      position: initial !important;
+      width: 100%;
+      height: 100% !important;
+      padding-bottom: 0;
+    }
+  }
+  .tr-img-wrap img {
+    position: initial !important;
+    width: 100%;
+    height: 100%;
   }
 }
 

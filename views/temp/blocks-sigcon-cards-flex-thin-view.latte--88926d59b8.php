@@ -47,7 +47,9 @@ final class Template88926d59b8 extends Latte\Runtime\Template
 
 ';
 						if (empty($card['image']['src'])) /* line 23 */ {
-							echo '            <img class="card__main_image" src="https://sigdoc.acm.org/conference/2023/wp-content/uploads/2023/09/sigdoc-logo.png" alt="" />
+							echo '            <img class="card__main_image" src="';
+							echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl(esc_url(home_url('/wp-content/themes/theme-sigcon/assets/img/placeholder-sigdoc-logo.jpg')))) /* line 24 */;
+							echo '" alt="" />
 ';
 						}
 						echo "\n";

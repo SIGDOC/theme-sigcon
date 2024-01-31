@@ -43,6 +43,9 @@ final class Template724d7639d0 extends Latte\Runtime\Template
             <li>
               <strong>Technical Editor</strong>: Daniel Hocutt, University of Richmond, United States
             </li>
+            <li>
+              <strong>Industry Liaison</strong>: Ashley Hardin, Red Hat, United States
+            </li>
           </ul>
         </div>
 
@@ -58,7 +61,7 @@ final class Template724d7639d0 extends Latte\Runtime\Template
     </div>
   </footer>
   ';
-		echo LR\Filters::escapeHtmlText(wp_footer()) /* line 46 */;
+		echo LR\Filters::escapeHtmlText(wp_footer()) /* line 49 */;
 		echo '
   </body>
   </html>

@@ -24,7 +24,7 @@ final class Template2c1dfc9bc3 extends Latte\Runtime\Template
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<!-- Open Graph -->
 	<meta name="og:type" content="conference"/>
-	<?php if(!is_front_page() && !is_home() && has_post_thumbnail()) : ?><meta property="og:image" content="(echo thumbnail url here)"/><?php else : ?><meta property="og:image" content="http://url_to_some_default_image.jpg"/><?php endif; ?>
+	<?php if(!is_front_page() && !is_home() && has_post_thumbnail()) : ?><meta property="og:image" content="(echo thumbnail url here)"/><?php else : ?><meta property="og:image" content="/conference/shared/assets/images/sigdoc-banner.png"/><?php endif; ?>
 	<meta name="og:site_name" content="';
 		echo LR\Filters::escapeHtmlAttr(get_bloginfo('title')) /* line 11 */;
 		echo '"/>

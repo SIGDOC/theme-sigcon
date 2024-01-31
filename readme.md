@@ -1,3 +1,20 @@
+# THEME FOR SIGDOC CONFERENCES
+
+This repo is for the SIG on the Design of Communication conference.
+
+## Custom Blocks
+
+Custom blocks are located in the `gutenberg > blocks` folder area.
+
+Current blocks include:
+
+- **Flexbox thin cards** <br> <img src="gutenberg/blocks/sigcon-cards-flex-thin/example.jpg" width="75px" style="float:left;margin-right:15px" />
+	- **Path**: `gutenberg/blocks/sigcon-cards-flex-thin`
+	- **Notes**: Main CSS styles are located in a shared cards stylesheet: `gutenberg/blocks_shared_css_and_js/css/sigcon-cards.scss`
+- **Cards with left floated images** <br> <img src="gutenberg/blocks/sigcon-cards-left-float-img-and-txt/example.jpg" width="75px" style="float:left;margin-right:15px" />
+	- **Path**: `gutenberg/blocks/sigcon-cards-left-float-img-and-txt`
+	- **Notes**: It's frontend.scss file overwrites WP's `tr-image-...` styles
+
 ## GUTENBERG BLOCK LESSONS LEARNED
 
 - `model.json` keys **must use** underscores—not hyphens. Otherwise it breaks the JSON.
@@ -5,17 +22,17 @@
 
 ## TASKS
 
-### SIGDOC Block Templating
+### Block Templating
 
-Custom Gutenberg blocks (`theme-rematriate/gutenberg/blocks/..`)
+Custom Gutenberg blocks (`theme-sigcon/gutenberg/blocks/..`)
 
-- [x] `animated-hero-heading`: Animated text banner
-	- [x] editor.scss
-	- [x] view.latte
-	- [x] frontend.scss
-	- [x] frontend.js
-	- [x] model.json
-	- [x] example.jpg
+- [] `enter_name_of_block`: Enter description of block component
+	- [] editor.scss
+	- [] view.latte
+	- [] frontend.scss
+	- [] frontend.js
+	- [] model.json
+	- [] example.jpg
 
 ## **Environment Requirements:**
 
@@ -95,7 +112,7 @@ Custom Gutenberg blocks (`theme-rematriate/gutenberg/blocks/..`)
 └── theme_redone_global_config.json
 ```
 
-### Rematriate Modifications
+### Modifications
 
 - `gutenberg/init.php` - needed to check for .DS_Store as a directory
 ```
