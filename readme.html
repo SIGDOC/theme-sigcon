@@ -45,6 +45,31 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<section id="theme-for-sigdoc-conferences" class="level1">
+<h1>THEME FOR SIGDOC CONFERENCES</h1>
+<p>This repo is for the SIG on the Design of Communication conference.</p>
+<section id="custom-blocks" class="level2">
+<h2 class="anchored" data-anchor-id="custom-blocks">Custom Blocks</h2>
+<p>Custom blocks are located in the <code>gutenberg &gt; blocks</code> folder area.</p>
+<p>Current blocks include:</p>
+<ul>
+<li><strong>Flexbox thin cards</strong> <br> <img src="gutenberg/blocks/sigcon-cards-flex-thin/example.jpg" width="75px" style="float:left;margin-right:15px">
+<ul>
+<li><strong>Path</strong>: <code>gutenberg/blocks/sigcon-cards-flex-thin</code></li>
+<li><strong>Notes</strong>: Main CSS styles are located in a shared cards stylesheet: <code>gutenberg/blocks_shared_css_and_js/css/sigcon-cards.scss</code></li>
+</ul></li>
+<li><strong>Cards with left floated images</strong> <br> <img src="gutenberg/blocks/sigcon-cards-left-float-img-and-txt/example.jpg" width="75px" style="float:left;margin-right:15px">
+<ul>
+<li><strong>Path</strong>: <code>gutenberg/blocks/sigcon-cards-left-float-img-and-txt</code></li>
+<li><strong>Notes</strong>: It’s frontend.scss file overwrites WP’s <code>tr-image-...</code> styles</li>
+</ul></li>
+<li><strong>Landing page animated and numbered card panels</strong> <br> <img src="gutenberg/blocks/sigcon-landing-cards/example.jpg" width="75px" style="float:left;margin-right:15px">
+<ul>
+<li><strong>Path</strong>: <code>gutenberg/blocks/sigcon-landing-cards</code></li>
+<li><strong>Notes</strong>: Uses Greensock.js library for the animations. However, it is designed to not require Greensock or javascript in general.</li>
+</ul></li>
+</ul>
+</section>
 <section id="gutenberg-block-lessons-learned" class="level2">
 <h2 class="anchored" data-anchor-id="gutenberg-block-lessons-learned">GUTENBERG BLOCK LESSONS LEARNED</h2>
 <ul>
@@ -54,18 +79,18 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="tasks" class="level2">
 <h2 class="anchored" data-anchor-id="tasks">TASKS</h2>
-<section id="rema-block-templating" class="level3">
-<h3 class="anchored" data-anchor-id="rema-block-templating">REMA Block Templating</h3>
-<p>Custom Gutenberg blocks (<code>theme-rematriate/gutenberg/blocks/..</code>)</p>
-<ul class="task-list">
-<li><input type="checkbox" checked=""><code>rema-animated-hero-heading</code>: Animated text banner
-<ul class="task-list">
-<li><input type="checkbox" checked="">editor.scss</li>
-<li><input type="checkbox" checked="">view.latte</li>
-<li><input type="checkbox" checked="">frontend.scss</li>
-<li><input type="checkbox" checked="">frontend.js</li>
-<li><input type="checkbox" checked="">model.json</li>
-<li><input type="checkbox" checked="">example.jpg</li>
+<section id="block-templating" class="level3">
+<h3 class="anchored" data-anchor-id="block-templating">Block Templating</h3>
+<p>Custom Gutenberg blocks (<code>theme-sigcon/gutenberg/blocks/..</code>)</p>
+<ul>
+<li>[] <code>enter_name_of_block</code>: Enter description of block component
+<ul>
+<li>[] editor.scss</li>
+<li>[] view.latte</li>
+<li>[] frontend.scss</li>
+<li>[] frontend.js</li>
+<li>[] model.json</li>
+<li>[] example.jpg</li>
 </ul></li>
 </ul>
 </section>
@@ -73,7 +98,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="environment-requirements" class="level2">
 <h2 class="anchored" data-anchor-id="environment-requirements"><strong>Environment Requirements:</strong></h2>
 <ul>
-<li>PHP ^8.0 (^7.4.29 for releases prior to v1.1.0)</li>
+<li>PHP ^8.0 (^7.4.29 for releases prior to v1.1.0)
+<ul>
+<li>This theme runs on PHP ^8.0</li>
+</ul></li>
 <li>Composer 2.0.2^</li>
 <li>Node 14.19.1</li>
 </ul>
@@ -152,8 +180,8 @@ ul.task-list li input[type="checkbox"] {
 ├── single.php
 ├── style.css
 └── theme_redone_global_config.json</code></pre>
-<section id="rematriate-modifications" class="level3">
-<h3 class="anchored" data-anchor-id="rematriate-modifications">Rematriate Modifications</h3>
+<section id="modifications" class="level3">
+<h3 class="anchored" data-anchor-id="modifications">Modifications</h3>
 <ul>
 <li><code>gutenberg/init.php</code> - needed to check for .DS_Store as a directory</li>
 </ul>
@@ -233,6 +261,7 @@ foreach ($all_blocks_dir_names as $key =&gt; $block_dir_name) {
 <li>To start the compiler and make it watch for file changes, simply run the npm start command from the terminal</li>
 <li>Once the project is finished and ready to be deployed, run npm run build:prod to optimize css and javascript files.</li>
 </ul>
+</section>
 </section>
 
 </main>

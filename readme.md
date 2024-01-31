@@ -14,6 +14,18 @@ Current blocks include:
 - **Cards with left floated images** <br> <img src="gutenberg/blocks/sigcon-cards-left-float-img-and-txt/example.jpg" width="75px" style="float:left;margin-right:15px" />
 	- **Path**: `gutenberg/blocks/sigcon-cards-left-float-img-and-txt`
 	- **Notes**: It's frontend.scss file overwrites WP's `tr-image-...` styles
+- **Landing page animated and numbered card panels** <br> <img src="gutenberg/blocks/sigcon-landing-cards/example.jpg" width="75px" style="float:left;margin-right:15px" />
+	- **Path**: `gutenberg/blocks/sigcon-landing-cards`
+	- **Notes**: Uses Greensock.js library for the animations. However, it is designed to not require Greensock or javascript in general.
+- **Flexbox animated and numbered card panels** <br> <img src="gutenberg/blocks/sigcon-landing-cards-flexrow/example.jpg" width="75px" style="float:left;margin-right:15px" />
+	- **Path**: `gutenberg/blocks/sigcon-landing-cards-flexrow`
+	- **Notes**: *Currently designed to account for up to 5 card panels*. Uses Greensock.js library for the animations. However, it is designed to not require Greensock or javascript in general.
+- **Featured paragraph with styled first letter** <br> <img src="gutenberg/blocks/sigcon-page-card-paragraph-feature/example.jpg" width="75px" style="float:left;margin-right:15px" />
+	- **Path**: `gutenberg/blocks/sigcon-page-card-paragraph-feature`
+	- **Notes**:
+- **Intro card for a page** <br> <img src="gutenberg/blocks/sigcon-page-intro-card/example.jpg" width="75px" style="float:left;margin-right:15px" />
+	- **Path**: `gutenberg/blocks/sigcon-page-intro-card`
+	- **Notes**: Good to use as the first paragraph on a page
 
 ## GUTENBERG BLOCK LESSONS LEARNED
 
@@ -37,6 +49,7 @@ Custom Gutenberg blocks (`theme-sigcon/gutenberg/blocks/..`)
 ## **Environment Requirements:**
 
 - PHP ^8.0 (^7.4.29 for releases prior to v1.1.0)
+	- This theme runs on PHP ^8.0
 - Composer 2.0.2^
 - Node 14.19.1
 
