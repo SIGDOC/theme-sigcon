@@ -1,4 +1,7 @@
 <?php
+
+require_once ( get_template_directory() . '/customize/customize.php' );
+
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
@@ -28,13 +31,10 @@ function tr_view_path($template_name) {
 // instead of: {include tr_view_path('parts/hero')}
 function tr_part($part_name) {
 	return get_template_directory() . "/views/parts/$part_name.latte";
-}  
-
+}
 
 // WRAPPER FN FOR TR_GET_MEDIA THAT ONLY PRINTS THE PATH STRING 
 // INSTEAD OF PRINTING THE ELEMENT
-
-
 
 /** 
  * @param string|array{title:string,src:string, id?:int, alt?:string} $media
@@ -54,12 +54,7 @@ function tr_get_media_path($media) {
  * @return void|string Prints result HTML or returns it, or returns the full path to the media
  * @see(https://webredone.com/theme-redone/theme-functions/tr_get_media/)
  */
-function tr_get_media(
-	$media,
-	$async = false,
-	$dont_print = false,
-	$path_only = false
-) {
+function tr_get_media($media, $async = false, $dont_print = false, $path_only = false) {
 
 	if ($media === NULL || (is_array($media) && empty($media['src']))) {
 		return false;
@@ -160,16 +155,8 @@ function tr_get_media(
 	}
 }
 
-
-
-
 // Import SVG code from theme assets or media. (Previously used on its own, now it gets called from tr_get_media fn)
-function tr_get_svg(
-	$file_name_or_uploads_path, 
-	$from_media = false, 
-	$async = false, 
-	$path_only = false
-) {
+function tr_get_svg($file_name_or_uploads_path, $from_media = false, $async = false, $path_only = false) {
 	$html = '';
 
 	$correct_svg_file_path = $from_media
@@ -200,13 +187,7 @@ function tr_get_img_path($img_path) {
 
 
 // (Previously used on its own, now it gets called from tr_get_media fn)
-function tr_get_img_sync(
-	$img_path, 
-	$image_size,
-	$img_alt = "", 
-	$img_class = "", 
-	$path_only = false
-) {
+function tr_get_img_sync($img_path, $image_size, $img_alt = "", $img_class = "", $path_only = false) {
 
 	// Only print the media path and don't add the img element
 	if ($path_only) {
@@ -226,13 +207,7 @@ function tr_get_img_sync(
 	return $img_html;
 }
 
-function tr_get_img_async(
-	$img_path, 
-	$image_size,
-	$img_alt = "", 
-	$img_class = "",
-	$path_only = false
-) {
+function tr_get_img_async($img_path, $image_size, $img_alt = "", $img_class = "", $path_only = false) {
 	$img_html = '<div class="tr-img-wrap-outer jsLoading"';
 	$img_html .=   ' style="--size-w-original:' . $image_size['w'] . ';--size-h-original: ' . $image_size['h'] . ';"';
 	$img_html .= '>';
@@ -263,11 +238,7 @@ function tr_get_img_async(
  * @return void
  * @see(https://webredone.com/theme-redone/theme-functions/tr_a-link-helper/)
  */
-function tr_a(
-	$a, 
-	$class = "", 
-	$attrs_only = false
-) {
+function tr_a($a, $class = "", $attrs_only = false) {
 	if (!$a['url']) return;
 
 	$new_tab = array_key_exists('target', $a) && $a['target'];
@@ -302,9 +273,7 @@ function tr_a(
  * @param array{string, string, string, ...} $feature
  * @return void
  */
-function tr_add_feature(
-	$feature
-) {
+function tr_add_feature($feature) {
 	$classes = "";
 	if ($feature['first_letter'] == "Drop-Capped First Letter") {
 		$classes .= "class='drop_case_first_letter";
@@ -312,8 +281,6 @@ function tr_add_feature(
 	$classes = "'";
 	echo $classes;
 }
-
-
 
 /**
  * SHARE LINKS TO SOCIAL MEDIA
@@ -458,8 +425,6 @@ Result...  Lorem ipsum habitant morbi
 */
 
 
-
-
 // Helper for custom looping over menu items
 function tr_get_nav_menu_items_by_location($location, $args = []) {
 	// Get all locations
@@ -481,7 +446,6 @@ function tr_log($toPrint, $isSmall = false, $left = false) {
 	echo '</pre>';
 }
 
-
 // To be used in loops for example
 function tr_log_i($toPrint, $long = false) {
 	$has_max_height = !$long ? ' max-height: 1500px !important; ' : ' max-height: 730px; ';
@@ -490,14 +454,12 @@ function tr_log_i($toPrint, $long = false) {
 	echo '</pre>';
 }
 
-
 // detect if IE 
 function tr_is_ie() {
 	if (preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false)) {
 		return true;
 	}
 }
-
 
 function tr_hex_to_rgb($hex) {
 	list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
@@ -513,7 +475,6 @@ function tr_str_ends_with( $haystack, $needle ) {
 	}
 	return substr( $haystack, -$length ) === $needle;
 }
-
 
 // Can be used with dynamically created modal to add the correct HTML for either YT, Vimeo or self hosted videos
 function tr_get_video_type_and_id($url) {
@@ -594,3 +555,11 @@ function tr_modal_end() {
 function current_year(){
 	return date('Y');
 }
+
+/**
+ * Load all our Customizer options
+ */
+function sigcon_customizer_setup() {
+	include_once trailingslashit( dirname(__FILE__) ) . 'inc/theme-customizer.php';
+}
+add_action( 'after_setup_theme', 'sigcon_customizer_setup' );

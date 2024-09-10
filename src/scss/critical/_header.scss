@@ -383,9 +383,7 @@ header.bg-logo-container {
     }
 
     .main-title {
-      // font-size: clamp(13vw,14vw,48px);
-      font-size: clamp(7vw,11vw,36px);
-      // font-size: clamp(2rem,10vw,3rem);
+      font-size: clamp(7vw,11vw,30px);
       font-family: 'Exo 2', sans-serif;
       font-weight: 500;
       color: rgba(0,0,0,0);
@@ -403,9 +401,9 @@ header.bg-logo-container {
     }
 
     .sub-title {
-      font-size: 4vw;
+      // font-size: 4vw;
+      font-size: clamp(1.25rem,3vw,5vw);
       color: var(--primaryColor);
-      // max-width: min-content;
     }
   }
 

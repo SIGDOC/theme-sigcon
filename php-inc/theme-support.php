@@ -112,10 +112,6 @@ function tr_remove_read_more( $buttons ){
 add_filter( 'mce_buttons','tr_remove_read_more' );
 
 
-
-
-
-
 // CUSTOM THUMB SIZES
 
 // used in cards

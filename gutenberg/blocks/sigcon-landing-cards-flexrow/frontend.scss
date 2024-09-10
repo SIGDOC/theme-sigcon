@@ -139,52 +139,6 @@ body {
       }
     }
   }
-  
-  // #social {
-  //   z-index: 97;
-  //   position: fixed;
-  //   right: 10px;
-  //   box-sizing: border-box;
-  //   top: 10px;
-  //   width: 30px;
-  //   height: 70px;
-  //   display: flex;
-  //   justify-content: space-between;
-  //   align-items: center;
-  //   flex-wrap: wrap;
-  //   a {
-  //     &:last-of-type {
-  //       svg {
-  //         transform: translateX(150px);
-  //       }
-  //     }
-  //     &:hover {
-  //       svg {
-  //         transform: scale(0.9);
-  //         path {
-  //           fill: var(--primaryColor);
-  //         }
-  //       }
-  //     }
-  //   }
-  //   svg {
-  //     width: 25px;
-  //     height: 25px;
-  //     position: relative;
-  //     transition: 0.2s ease-in-out, transform 0.6s $expo;
-  //     transform: translateY(-150px);
-
-  //     path {
-  //       fill: var(--secondaryShade5);
-  //       transition: 0.2s ease-in-out;
-
-  //       &.fill-none {
-  //         fill: none;
-  //       }
-  //     }
-
-  //   }
-  // }
 
   svg {
     position: absolute;
@@ -205,9 +159,12 @@ body {
     padding-bottom: 2rem;
 
     .landing-cards-grid-3-col-container {
-      display: grid;
-      grid-template-columns: repeat(3, 0.3333fr);
-      gap: 1rem;
+      display: flex;
+      flex-wrap: wrap-reverse;
+      flex-direction: row-reverse;
+      // display: grid;
+      // grid-template-columns: repeat(3, 0.3333fr);
+      // gap: 1rem;
       width: 100vw;
       margin: 0;
       padding: 0;
@@ -262,7 +219,12 @@ body {
       }
     
       .panel {
+        // Flex Item Work
+        flex: 1 1 300px;
+        max-height: 300px;
+        margin-bottom: 3rem !important;
         padding: 0 10px;
+        // Grid Work
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-template-rows: repeat(4, 1fr);

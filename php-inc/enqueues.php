@@ -11,8 +11,7 @@ add_action( 'admin_enqueue_scripts', 'tr_admin_enqueue' );
 
 
 // FRONT-END ENQUEUES
-function tr_enqueue()
-{
+function tr_enqueue() {
 	// STYLES
 	// Main css file
 	wp_enqueue_style('tr-style', get_stylesheet_uri());

@@ -19,11 +19,9 @@ h1,h2,h3,h4 {
 
 // Font sizing
 h1 { font-size: clamp(36px, 10vw, 62px) }
-// h1 { font-size: clamp(2rem,10vw,3rem); }
 h2 { font-size: clamp(30px, 10vw, 48px); }
-// h2 { font-size: clamp(1.5rem,8vw,2.75rem); }
 h3 { font-size: 1.75rem; }
-h4 { font-size: 1.75rem; font-style: italic;}
+h4 { font-size: 1.25rem; font-style: italic;}
 
 // Font spacing
 h3 { margin: 4rem 0 2rem 0 !important; }
@@ -83,7 +81,7 @@ h3 { margin: 4rem 0 2rem 0 !important; }
 
 // SPACING
 h2,h3,h4 {
-  margin: 2rem 0;
+  margin: 2rem 0 1rem 0;
 }
 p,ul,ol {
   margin: 2rem 0;

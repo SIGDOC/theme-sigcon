@@ -35,7 +35,10 @@ final class Template724d7639d0 extends Latte\Runtime\Template
               <strong>Program Co-Chair</strong>: Dan Card, University Minnesota Twin Cities, United States
             </li>
             <li>
-              <strong>SRC Chair</strong>: Bradley Dilger, Purdue University, United States
+              <strong>SRC Co-Chair</strong>: Bradley Dilger, Purdue University, United States
+            </li>
+            <li>
+              <strong>SRC Co-Chair</strong>: Allegra Smith, Georgia Insitute of Technology, United States
             </li>
             <li>
               <strong>Sponsorship Chair</strong>: Dan Richards, Old Dominion University, United States
@@ -61,7 +64,7 @@ final class Template724d7639d0 extends Latte\Runtime\Template
     </div>
   </footer>
   ';
-		echo LR\Filters::escapeHtmlText(wp_footer()) /* line 49 */;
+		echo LR\Filters::escapeHtmlText(wp_footer()) /* line 52 */;
 		echo '
   </body>
   </html>

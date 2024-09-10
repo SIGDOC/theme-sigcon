@@ -16,9 +16,9 @@
 }
 
 .btn--brand {
-  background: var(--c-brand);
-  border-color: var(--c-brand);
-  color: #fff !important;
+  background: var(--accentColor);
+  border-color: var(--primaryColor);
+  color: var(--primaryColor) !important;
 
   &:hover {
     background: rgba(var(--c-brand--rgb), 0.8);
