@@ -37,10 +37,10 @@ body {
     margin: 2rem 0;
   }
 
-  h3 {
-    position: absolute;
-    height: 100px;
-  }
+  // h3 {
+  //   position: absolute;
+  //   height: 100px;
+  // }
 
 }
 
@@ -84,13 +84,14 @@ body {
 }
 
 .schedule__day_container {
-  h3, h4 {
-    font-size: 2.15rem;
-    background: var(--primaryColor);
-    background: linear-gradient(to right, var(--primaryColor), var(--secondaryColor), var(--accentColor));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  h3 { font-size: 2.75rem;}
+  h4 { font-size: 2.15rem;}
+  // h3, h4 {
+  //   background: var(--primaryColor);
+  //   background: linear-gradient(to right, var(--primaryColor), var(--secondaryColor), var(--accentColor));
+  //   -webkit-background-clip: text;
+  //   -webkit-text-fill-color: transparent;
+  // }
 }
 
 .schedule__session_title {

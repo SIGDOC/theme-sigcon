@@ -205,7 +205,8 @@
 						font-size: 1rem;
 						font-weight: 300;
 						padding: 0;
-						margin-left:10px;
+						margin-left: 10px;
+						margin-right: 10px !important;
 						background-color: transparent;
 						box-shadow: none;
 						border-bottom: 1px solid var(--secondaryShade5);
@@ -217,11 +218,10 @@
 					}
 
 					& label {
-						position: absolute !important;
-						top: -18px !important;
-						margin-left: 10px !important;
+						/*position: absolute !important;*/
+						/*top: -18px !important;*/
 						color: var(--secondaryShade5);
-						font-weight: 300;
+						font-weight: 400;
 					}
 
 				}
@@ -238,11 +238,13 @@
 					</label>
 				</div>
 			</form>
-
-			<div id="toggle_all_container">
-				<button id="button_toggle__all" class="btn btn--brand expand_more__button expand_all_button" role="button" tabindex="0">Toggle All Sessions</button>
+			
+			
+			<div id="toggle_all_container" style="display:none">
+				<button id="button_toggle__all" class="btn btn--brand expand_more__button expand_all_button" role="button">Open All Sessions</button>
+				<button id="button_close__all" class="btn btn--brand expand_more__button expand_all_button" role="button">Close All Sessions</button>
 			</div>
-
+			
 			<div class="no-result" style="display:none">
         <div class="no_result__logo">
           <svg id="sigdoc-23-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 222.47 226.03" style="translate: none; rotate: none; scale: none; transform: translate(-50%, -50%);">
@@ -348,26 +350,59 @@
 		<script>
 			// Expand button
 			let expandAllButton = document.getElementById('button_toggle__all')
-			//let expandAllButton = document.createElement('button')
-			// expandAllButton.id = "button_toggle__all"
-			// expandAllButton.className = "expand_more__button btn btn--brand"
-			// expandAllButton.setAttribute('role','button')
-			// expandAllButton.setAttribute('tabindex','0')
-			// expandAllButton.innerHTML = "Toggle All Sessions"
+			let closeAllButton = document.getElementById('button_close__all')
+			let allScheduleDayContainers = document.querySelectorAll('div.schedule__day_container')
+			closeAllButton.setAttribute('style','margin-left:5px;')
 			expandAllButton.addEventListener("click", (e) => {
 				toggleAllVisibility(e)
+			})
+			closeAllButton.addEventListener("click", (e) => {
+				toggleCloseAllVisibility(e)
 			})
 
 			// Append
 			let toggleScheduleContainer = document.getElementById('toggle_all_container')
 			toggleScheduleContainer.appendChild(expandAllButton)
+			toggleScheduleContainer.appendChild(closeAllButton)
+
+			const stageDisplayer = (guideSlotContainer) => {
+				let stageContainer = guideSlotContainer.parentElement.parentElement
+				let totalAllStageCards = Number(stageContainer.attributes[2].nodeValue)
+				let noneCardLength = stageContainer.querySelectorAll('.guide-slot_card[style="display: none;"]').length
+
+				if ( (totalAllStageCards - noneCardLength) == 0) {
+					stageContainer.style.display = "none"
+				}
+				else if ( (totalAllStageCards - noneCardLength) > 0 ) {
+					stageContainer.style.display = "grid"
+				}
+
+			}
+
+			const roomDisplayer = (card) => {
+				let guideSlotContainer = card.parentElement
+				let totalAllCards = Number(guideSlotContainer.attributes[1].nodeValue)
+				let noneCardLength = guideSlotContainer.querySelectorAll('.guide-slot_card[style="display: none;"]').length
+
+				if ( (totalAllCards - noneCardLength) == 0) {
+					guideSlotContainer.style.display = "none"
+					stageDisplayer(guideSlotContainer)
+				}
+
+			}
 
 
 			const filterByName = (e) => {
-				const items = document.querySelectorAll(".guide-slot_card");
-				const searchTerm = e.target.value.trim().toLowerCase();
+				const items = document.querySelectorAll(".guide-slot_card")
+				const searchTerm = e.target.value.trim().toLowerCase()
 
 				items.forEach(item => {
+					let visibilityChecker = item.checkVisibility({
+						contentVisibilityAuto: true,
+					})
+
+					let glsContainer = item.parentElement.parentElement
+					let currentStageCount = glsContainer.dataset.currentCount
 
 					if(items.length == 0) {
 						let noShow = document.querySelector('.no-result')
@@ -376,11 +411,31 @@
 						let noShow = document.querySelector('.no-result')
 						noShow.style.display = 'none'
 					}
+					
+					// If item presentation slot card includes term, revert to show
+					item.style.display = 'revert'
+					/**
+						Check if stage is empty
+					*/
+					let roomContainer = glsContainer.childNodes
+					roomContainer.forEach(guideSlots => {
+						let totalCards = Number(guideSlots.attributes[1].nodeValue)
+						let cards = guideSlots.querySelectorAll('.guide-slot_card')
 
-					item.style.display = 'revert';
+						noneCardTotal = guideSlots.querySelectorAll('.guide-slot_card[style="display: none;"]').length
+						if ( (totalCards-noneCardTotal) == 0 ) {
+							guideSlots.style.display = "none"
+						}
+						else if ( (totalCards-noneCardTotal) > 0 ) {
+							guideSlots.style.display = "revert"
+						}
+						
+					})
 
+					// Hide any schedule session containers with no results from filter
 					if (!item.innerText.toLowerCase().includes(searchTerm)) {
-						item.style.display = 'none';
+						item.style.display = 'none'
+						roomDisplayer(item)
 					}
 				})
 			}
@@ -393,15 +448,26 @@
 				className = className.replaceAll("/", "")
 				const cardElements = document.querySelectorAll(className)
 
+				// OPEN ALL Cards
 				cardElements.forEach((element) => {
-					if (element.style.display === "none") {
-							element.style.display = "grid"
-							element.setAttribute('aria-expanded', "true")
-							show(element)
-					} else {
-							element.setAttribute('aria-expanded', "false")
-							hide(element)
-					}
+					element.style.display = "grid"
+					element.setAttribute('aria-expanded', "true")
+					show(element)
+				})
+			}
+
+			// Close All Button
+			const toggleCloseAllVisibility = (e) => {
+				let className = ".schedule__stage_guide-container"
+				className = className.replaceAll("'", "")
+				className = className.replaceAll("&_", "")
+				className = className.replaceAll("/", "")
+				const cardElements = document.querySelectorAll(className)
+
+				// OPEN ALL Cards
+				cardElements.forEach((element) => {
+					element.setAttribute('aria-expanded', "false")
+					hide(element)
 				})
 			}
 		</script>

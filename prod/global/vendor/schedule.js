@@ -36,6 +36,13 @@ const hide = (elem) => {
 
 }
 
+/**
+ * TODO: show/hide any schedule__session class containers
+ * - .is-visible if presentation exists ()
+ * - Hide if no presentations
+*/
+
+
 const toggleVisibility = (e) => {
 	let className = ".stage_container__"+(e.target.offsetParent.attributes.id.nodeValue).split("__")[1]
 	className = className.replaceAll("'", "")
@@ -75,10 +82,13 @@ const groupingRoomData = async (perDayPerSession, roomKey) => {
 }
 
 const writeDaySessions = async (perDayPerSession, perRoom) => {
+	// Presentation Card Total
+	let presCardsEntireSum = 0
 
 	// Parse Days
 	const keys = Object.keys(perDayPerSession)
 	keys.forEach((key) => {
+
 		// Append Day Container
 		let dayDate = key
 		const container = document.getElementById("schedule__container")
@@ -95,150 +105,186 @@ const writeDaySessions = async (perDayPerSession, perRoom) => {
 		dh3.innerHTML = dateH3.toLocaleDateString("en-US", dateOptions)
 		dayContainer.appendChild(dh3)
 
+		// Day Toggle Button
+		// let dayToggleButton = document.createElement('button')
+		// dayToggleButton.id = "toggleButton-"+dayDate
+		// dayToggleButton.className = "expand_more__button"
+		// dayToggleButton.setAttribute('role','button')
+		// // Button Content
+		// let buttonDateOptions = { weekday: 'long' };
+		// let dateButton = new Date(Date.parse(dayDate))
+		// dayToggleButton.innerHTML = "Toggle "+dateButton.toLocaleDateString("en-US", buttonDateOptions)+"\'s Sessions"
+		// // dayToggleButton.addEventListener("click", (e) => {
+		// // 	toggleVisibility(e)
+		// // })
+		// // Append 4 spans for effect
+		// for (let s=0; s<4; s++) {
+		// 	let expandSpan = document.createElement('span')
+		// 	dayToggleButton.appendChild(expandSpan)
+		// }
+		// // Append 4 bmasks for effect
+		// for (let b=0; b<4; b++) {
+		// 	let expandB = document.createElement('b')
+		// 	expandB.innerHTML = "Toggle "+dateButton.toLocaleDateString("en-US", buttonDateOptions)+"\'s Sessions"
+		// 	expandB.setAttribute('aria-hidden','true')
+		// 	dayToggleButton.appendChild(expandB)
+		// }
+		// dayContainer.appendChild(dayToggleButton)
+
 		// Day sessions wrapper
 		let sessionsWrapper = document.createElement('div')
+		sessionsWrapper.id = "sessions-"+dayDate
 		sessionsWrapper.className = "schedule__session_type_wrapper"
 		dayContainer.appendChild(sessionsWrapper)
 		// Parse Sessions
 		let dayKeys = Object.keys(perDayPerSession[key])
 		dayKeys.forEach((sessionType) => {
-		/**
-		 - section.schedule__session
-			- div.schedule__session_title.js-expandmore
-				- h4
-				- p
-			- div.schedule__stage_guide-container.js-to_expand
-				- div.guide-slot
-		*/
-		// Per Session (schedule__session)
-		let sessionsContainer = document.createElement('section')
-		sessionsContainer.className = "schedule__session"
-		sessionsWrapper.appendChild(sessionsContainer)
+			/**
+			 - section.schedule__session
+				- div.schedule__session_title.js-expandmore
+					- h4
+					- p
+				- div.schedule__stage_guide-container.js-to_expand
+					- div.guide-slot
+			*/
+			// Per Session (schedule__session)
+			let sessionsContainer = document.createElement('section')
+			sessionsContainer.className = "schedule__session"
+			sessionsWrapper.appendChild(sessionsContainer)
 
-		// Session title container (schedule__session_title)
-		let sessionsTitleContainer = document.createElement('div')
-		sessionsTitleContainer.className = "schedule__session_title"
-		sessionsContainer.appendChild(sessionsTitleContainer)
+			// Session title container (schedule__session_title)
+			let sessionsTitleContainer = document.createElement('div')
+			sessionsTitleContainer.className = "schedule__session_title"
+			// Append session name to session container as ID
+			sessionsContainer.id = "schedule__session"+"--"+sessionType.replaceAll(" ", "_").toLowerCase()
+			sessionsContainer.appendChild(sessionsTitleContainer)
 
-		// Session Title h4
-		let dh4 = document.createElement('h4')
-		dh4.innerHTML = sessionType
-		sessionsTitleContainer.appendChild(dh4)
+			// Session Title h4
+			let dh4 = document.createElement('h4')
+			dh4.innerHTML = sessionType
+			sessionsTitleContainer.appendChild(dh4)
 
-		// Room Container (schedule__stage_guide-container)
-		let roomContainer = document.createElement('div')
-		roomContainer.setAttribute('style', 'display:none;height:0;opacity: 0;transition:height 350ms ease-in-out, opacity 750ms ease-in-out;')
-		let stageContainerName = "stage_container__"+sessionType.replaceAll(" ", "_").toLowerCase()
-		stageContainerName = stageContainerName.replaceAll("'", "")
-		stageContainerName = stageContainerName.replaceAll("/", "")
-		stageContainerName = stageContainerName.replaceAll("&_", "")
-		roomContainer.className = "schedule__stage_guide-container "+stageContainerName
-		sessionsContainer.appendChild(roomContainer)
+			// Room Container (schedule__stage_guide-container)
+			let roomContainer = document.createElement('div')
+			roomContainer.setAttribute('style', 'display:none;height:0;opacity: 0;transition:height 350ms ease-in-out, opacity 750ms ease-in-out;')
+			let stageContainerName = "stage_container__"+sessionType.replaceAll(" ", "_").toLowerCase()
+			stageContainerName = stageContainerName.replaceAll("'", "")
+			stageContainerName = stageContainerName.replaceAll("/", "")
+			stageContainerName = stageContainerName.replaceAll("&_", "")
+			roomContainer.className = "schedule__stage_guide-container "+stageContainerName+" is-visible"
+			sessionsContainer.appendChild(roomContainer)
 
-		// Time
-		let timeString = perDayPerSession[key][sessionType][0].time
-		let startTime = (timeString.match(/^(\d+)/)[1])
-		let endTime = (timeString.match(/-(\d+)/)[1]).replace('-', '')
-		let startHour = startTime.slice(0,2)
-		let endHour = endTime.slice(0,2)
-		let startMin = startTime.slice(-2)
-		let endMin = endTime.slice(-2)
-		let numStartHour = Number(startHour)
-		let numStartMin = Number(startMin)
-		let numEndHour = Number(endHour)
-		let numEndMin = Number(endMin)
-		let fullTimeString = ""
-		// START PM
-		if (numStartHour > 12) {
-			numStartHour = numStartHour-12
-		}
-		// END PM
-		if (numEndHour > 12) {
-			numEndHour = numEndHour-12
-		}
-		// Handle Minutes
-		if (numStartMin == 0) {
-			numStartMin = "00"
-		}
-		if (numEndMin == 0) {
-			numEndMin = "00"
-		}
-		fullTimeString = (
-			numStartHour.toString() + ':' + numStartMin.toString()
-			+ "-" + numEndHour.toString() + ':' + numEndMin.toString()
-		)
-		let sessTimePara = document.createElement('p')
-		sessTimePara.className = "time session_time"
-		sessTimePara.innerHTML = fullTimeString
-		sessionsTitleContainer.appendChild(sessTimePara)
+			// Time
+			let timeString = perDayPerSession[key][sessionType][0].time
+			let startTime = (timeString.match(/^(\d+)/)[1])
+			let endTime = (timeString.match(/-(\d+)/)[1]).replace('-', '')
+			let startHour = startTime.slice(0,2)
+			let endHour = endTime.slice(0,2)
+			let startMin = startTime.slice(-2)
+			let endMin = endTime.slice(-2)
+			let numStartHour = Number(startHour)
+			let numStartMin = Number(startMin)
+			let numEndHour = Number(endHour)
+			let numEndMin = Number(endMin)
+			let fullTimeString = ""
+			// START PM
+			if (numStartHour > 12) { numStartHour = numStartHour-12 }
+			// END PM
+			if (numEndHour > 12) { numEndHour = numEndHour-12 }
+			// Handle Minutes
+			if (numStartMin == 0) { numStartMin = "00" }
+			if (numEndMin == 0) { numEndMin = "00" }
+			fullTimeString = (
+				numStartHour.toString() + ':' + numStartMin.toString()
+				+ "-" + numEndHour.toString() + ':' + numEndMin.toString()
+			)
+			let sessTimePara = document.createElement('p')
+			sessTimePara.className = "time session_time"
+			sessTimePara.innerHTML = fullTimeString
+			sessionsTitleContainer.appendChild(sessTimePara)
 
-		// Expand button
-		let expandButton = document.createElement('button')
-		expandButton.id = "button_toggle__"+sessionType.replaceAll(" ", "_").toLowerCase()
-		expandButton.className = "expand_more__button"
-		expandButton.setAttribute('role','button')
-		expandButton.setAttribute('tabindex','0')
-		expandButton.innerHTML = "Toggle Sessions"
-		expandButton.addEventListener("click", (e) => {
-			toggleVisibility(e)
-		})
-		// Append 4 spans for effect
-		for (let s=0; s<4; s++) {
-			let expandSpan = document.createElement('span')
-			expandButton.appendChild(expandSpan)
-		}
-		// Append 4 bmasks for effect
-		for (let b=0; b<4; b++) {
-			let expandB = document.createElement('b')
-			expandB.innerHTML = "Toggle Sessions"
-			expandB.setAttribute('aria-hidden','true')
-			expandButton.appendChild(expandB)
-		}
-		sessionsTitleContainer.appendChild(expandButton)
+			// Expand button
+			// let expandButton = document.createElement('button')
+			// expandButton.id = "button_toggle__"+sessionType.replaceAll(" ", "_").toLowerCase()
+			// expandButton.className = "expand_more__button"
+			// expandButton.setAttribute('role','button')
+			// expandButton.setAttribute('tabindex','0')
+			// expandButton.innerHTML = "Toggle Sessions"
+			// expandButton.addEventListener("click", (e) => {
+			// 	toggleVisibility(e)
+			// })
+			// // Append 4 spans for effect
+			// for (let s=0; s<4; s++) {
+			// 	let expandSpan = document.createElement('span')
+			// 	expandButton.appendChild(expandSpan)
+			// }
+			// // Append 4 bmasks for effect
+			// for (let b=0; b<4; b++) {
+			// 	let expandB = document.createElement('b')
+			// 	expandB.innerHTML = "Toggle Sessions"
+			// 	expandB.setAttribute('aria-hidden','true')
+			// 	expandButton.appendChild(expandB)
+			// }
+			// sessionsTitleContainer.appendChild(expandButton)
 
-		let perRoomKeys = Object.keys(perRoom[sessionType])
-		// Room Presentations
-		perRoomKeys.forEach((roomKey) => {
-			// Per Room
-			let room = document.createElement('div')
-			room.className = "guide-slot"
-			roomContainer.appendChild(room)
-			// Room name h5
-			let roomNameH5 = document.createElement('h5')
-			roomNameH5.className = "room"
-			roomNameH5.innerHTML = roomKey
-			room.appendChild(roomNameH5)
-			// Check for panel theme, if there append it below the title
-			if (perRoom[sessionType][roomKey][0].theme.length > 0) {
-				let themeP = document.createElement('p')
-				themeP.className = "room_theme"
-				themeP.innerHTML = perRoom[sessionType][roomKey][0].theme
-				room.appendChild(themeP)
-			}
+			let perRoomKeys = Object.keys(perRoom[sessionType])
+			let presCardsPerSession = 0
+			// Room Presentations
+			perRoomKeys.forEach((roomKey) => {
+				// Per Room
+				let room = document.createElement('div')
+				room.className = "guide-slot"
+				roomContainer.appendChild(room)
+				// Room name h5
+				let roomNameH5 = document.createElement('h5')
+				roomNameH5.className = "room"
+				roomNameH5.innerHTML = roomKey
+				room.appendChild(roomNameH5)
+				// Check for panel theme, if there append it below the title
+				if (perRoom[sessionType][roomKey][0].theme.length > 0) {
+					let themeP = document.createElement('p')
+					themeP.className = "room_theme"
+					themeP.innerHTML = perRoom[sessionType][roomKey][0].theme
+					room.appendChild(themeP)
+				}
 
-			// Append presentations
-			perRoom[sessionType][roomKey].forEach((presentation) => {
-				// Slot Cards
-				let presentationCard = document.createElement('div')
-				presentationCard.className = "guide-slot_card"
-				room.appendChild(presentationCard)
-				// Append presentation content to card
-				let presTitleH6 = document.createElement('h6')
-				presTitleH6.innerHTML = presentation.titles
-				presentationCard.appendChild(presTitleH6)
-				// Append presenters
-				let presenterNamesP = document.createElement('p')
-				presenterNamesP.className = "presenters"
-				presenterNamesP.innerHTML = presentation.presenters
-				presentationCard.appendChild(presenterNamesP)
+				// Append presentations
+				let presCardsPerRoom = 0
+				perRoom[sessionType][roomKey].forEach((presentation) => {
+					// Add presentation total
+					presCardsEntireSum = presCardsEntireSum+1
+					presCardsPerSession = presCardsPerSession+1
+					presCardsPerRoom = presCardsPerRoom+1
+
+					// Slot Cards
+					let presentationCard = document.createElement('div')
+					presentationCard.className = "guide-slot_card"
+					room.appendChild(presentationCard)
+					// Append presentation content to card
+					let presTitleH6 = document.createElement('h6')
+					presTitleH6.innerHTML = presentation.titles
+					presentationCard.appendChild(presTitleH6)
+					// Append presenters
+					let presenterNamesP = document.createElement('p')
+					presenterNamesP.className = "presenters"
+					presenterNamesP.innerHTML = presentation.presenters
+					presentationCard.appendChild(presenterNamesP)
+				})
+				// Append cards per room
+				room.dataset.presentationCount = String(presCardsPerRoom)
+				room.dataset.currentCount = String(presCardsPerRoom)
 			})
-		})
+			// Append cards per session
+			sessionsContainer.dataset.presentationCount = (presCardsPerSession)
+			sessionsContainer.dataset.presentationCount = (presCardsPerSession)
+			roomContainer.dataset.presentationCount = (presCardsPerSession)
+			roomContainer.dataset.currentCount = (presCardsPerSession)
 
 		})
 
-		let dayDivider = document.createElement('hr')
-		dayDivider.className = 'divider'
-		container.appendChild(dayDivider)
+		// let dayDivider = document.createElement('hr')
+		// dayDivider.className = 'divider'
+		// container.appendChild(dayDivider)
 	})
 
 }

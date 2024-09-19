@@ -1,3 +1,6 @@
+# Project Specific
+sigdoc-schedul*.csv
+
 # Logs
 logs
 *.log

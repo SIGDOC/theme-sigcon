@@ -21,10 +21,7 @@
   }
 
   h3 {
-    position: absolute;
-    height: 75px;
-    width: 100vw;
-    margin: 0 0 1rem 0.2rem !important;
+    margin: 4rem 0 2rem 0.2rem !important;
   }
   h4 {
     font-size: 1.75rem !important;
@@ -33,6 +30,26 @@
   p.session_time {
     margin: 0;
   }
+
+  // .expand_more__button {
+  //   --borderWidth: 3;
+  //   --boxShadowDepth: 0;
+  //   --buttonColor: var(--primaryColor);
+  //   --fontSize: 1;
+  //   --horizontalPadding: 16;
+  //   --verticalPadding: 8;
+  //   background: rgba(0,0,0,0);
+  //   border: calc(var(--borderWidth)*1px) solid var(--buttonColor);
+  //   color: var(--buttonColor);
+  //   cursor: pointer;
+  //   font-size: calc(var(--fontSize)*1rem);
+  //   outline: rgba(0,0,0,0);
+  //   padding: calc(var(--verticalPadding)*1px) calc(var(--horizontalPadding)*1px);
+  //   position: relative;
+  //   transition: box-shadow .15s ease;
+  //   width: 100%;
+  //   font-weight: 600;
+  // }
 
 }
 
@@ -81,12 +98,80 @@
 }
 
 .schedule__day_container {
-  h3, h4 {
-    font-size: 2.15rem;
-    background: var(--primaryColor);
-    background: linear-gradient(to right, var(--primaryColor), var(--secondaryColor), var(--accentColor));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  h3 { font-size: 2.75rem;}
+  h4 { font-size: 2.15rem;}
+  // h3, h4 {
+  //   background: var(--primaryColor);
+  //   background: linear-gradient(to right, var(--primaryColor), var(--secondaryColor), var(--accentColor));
+  //   -webkit-background-clip: text;
+  //   -webkit-text-fill-color: transparent;
+  // }
+  // BUTTON EFFECT
+  & button {
+    --borderWidth: 3;
+    --boxShadowDepth: 0;
+    --buttonColor: var(--primaryColor);
+    --fontSize: 1;
+    --horizontalPadding: 16;
+    --verticalPadding: 8;
+    background: transparent;
+    border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
+    // box-shadow: calc(var(--boxShadowDepth) * 1px) calc(var(--boxShadowDepth) * 1px) 0 #888;
+    color: var(--buttonColor);
+    cursor: pointer;
+    font-size: calc(var(--fontSize) * 1rem);
+    outline: transparent;
+    padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px);
+    position: relative;
+    transition: box-shadow 0.15s ease;
+    width: 250px;
+    font-weight: 600;
+    
+    &> span {
+      -webkit-clip-path: var(--clip);
+      bottom: calc(var(--borderWidth) * -1px);
+      clip-path: var(--clip);
+      left: calc(var(--borderWidth) * -1px);
+      position: absolute;
+      right: calc(var(--borderWidth) * -1px);
+      top: calc(var(--borderWidth) * -1px);
+      z-index: 1;
+      
+      &:nth-of-type(1):hover,
+      &:nth-of-type(2):hover,
+      &:nth-of-type(3):hover,
+      &:nth-of-type(4):hover { --clip: polygon(0 0, 100% 0, 100% 100%, 0 100%); z-index: 2; }
+      &:nth-of-type(1):hover ~ b:nth-of-type(1),
+      &:nth-of-type(2):hover ~ b:nth-of-type(2),
+      &:nth-of-type(3):hover ~ b:nth-of-type(3),
+      &:nth-of-type(4):hover ~ b:nth-of-type(4) { --clip: inset(0 0 0 0); }
+      &:nth-of-type(1) { --clip: polygon(0 0, 100% 0, 50% 50%, 50% 50%); }
+      &:nth-of-type(2) { --clip: polygon(100% 0, 100% 100%, 50% 50%); }
+      &:nth-of-type(3) { --clip: polygon(0 100%, 100% 100%, 50% 50%); }
+      &:nth-of-type(4) { --clip: polygon(0 0, 0 100%, 50% 50%); }
+    }
+    &> b {
+      -webkit-clip-path: var(--clip);
+      background: var(--buttonColor);
+      border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
+      bottom: calc(var(--borderWidth) * -1px);
+      font-weight: bold;
+      clip-path: var(--clip);
+      color: var(--bg, #fafafa);
+      left: calc(var(--borderWidth) * -1px);
+      padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px);
+      position: absolute;
+      right: calc(var(--borderWidth) * -1px);
+      top: calc(var(--borderWidth) * -1px);
+      transition: -webkit-clip-path 0.25s ease;
+      transition: clip-path 0.25s ease;
+      transition: clip-path 0.25s ease, -webkit-clip-path 0.25s ease;
+      
+      &:nth-of-type(1) { --clip: inset(0 0 100% 0); }
+      &:nth-of-type(2) { --clip: inset(0 0 0 100%); }
+      &:nth-of-type(3) { --clip: inset(100% 0 0 0); }
+      &:nth-of-type(4) { --clip: inset(0 100% 0 0); }
+    }
   }
 }
 
@@ -105,91 +190,6 @@
     font-size: 1.5rem;
     font-weight: bolder;
     text-transform: uppercase;
-  }
-  // BUTTON EFFECT
-  button {
-    --borderWidth: 3;
-    --boxShadowDepth: 0;
-    --buttonColor: var(--primaryColor);
-    --fontSize: 1;
-    --horizontalPadding: 16;
-    --verticalPadding: 8;
-    background: transparent;
-    border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
-    // box-shadow: calc(var(--boxShadowDepth) * 1px) calc(var(--boxShadowDepth) * 1px) 0 #888;
-    color: var(--buttonColor);
-    cursor: pointer;
-    font-size: calc(var(--fontSize) * 1rem);
-    outline: transparent;
-    padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px);
-    position: relative;
-    transition: box-shadow 0.15s ease;
-    width: 100%;
-    font-weight: 600;
-  }
-  button span {
-    -webkit-clip-path: var(--clip);
-    bottom: calc(var(--borderWidth) * -1px);
-    clip-path: var(--clip);
-    left: calc(var(--borderWidth) * -1px);
-    position: absolute;
-    right: calc(var(--borderWidth) * -1px);
-    top: calc(var(--borderWidth) * -1px);
-    z-index: 1;
-  }
-  button span:nth-of-type(1):hover,
-  button span:nth-of-type(2):hover,
-  button span:nth-of-type(3):hover,
-  button span:nth-of-type(4):hover {
-    --clip: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    z-index: 2;
-  }
-  button span:nth-of-type(1):hover ~ b:nth-of-type(1),
-  button span:nth-of-type(2):hover ~ b:nth-of-type(2),
-  button span:nth-of-type(3):hover ~ b:nth-of-type(3),
-  button span:nth-of-type(4):hover ~ b:nth-of-type(4) {
-    --clip: inset(0 0 0 0);
-  }
-  button span:nth-of-type(1) {
-    --clip: polygon(0 0, 100% 0, 50% 50%, 50% 50%);
-  }
-  button span:nth-of-type(2) {
-    --clip: polygon(100% 0, 100% 100%, 50% 50%);
-  }
-  button span:nth-of-type(3) {
-    --clip: polygon(0 100%, 100% 100%, 50% 50%);
-  }
-  button span:nth-of-type(4) {
-    --clip: polygon(0 0, 0 100%, 50% 50%);
-  }
-  button b {
-    -webkit-clip-path: var(--clip);
-    background: var(--buttonColor);
-    border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
-    bottom: calc(var(--borderWidth) * -1px);
-    font-weight: bold;
-    clip-path: var(--clip);
-    color: var(--bg, #fafafa);
-    left: calc(var(--borderWidth) * -1px);
-    padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px);
-    position: absolute;
-    right: calc(var(--borderWidth) * -1px);
-    top: calc(var(--borderWidth) * -1px);
-    transition: -webkit-clip-path 0.25s ease;
-    transition: clip-path 0.25s ease;
-    transition: clip-path 0.25s ease, -webkit-clip-path 0.25s ease;
-  }
-  button b:nth-of-type(1) {
-    --clip: inset(0 0 100% 0);
-  }
-  button b:nth-of-type(2) {
-    --clip: inset(0 0 0 100%);
-  }
-  button b:nth-of-type(3) {
-    --clip: inset(100% 0 0 0);
-  }
-  button b:nth-of-type(4) {
-    --clip: inset(0 100% 0 0);
   }
 }
 
