@@ -228,23 +228,15 @@
 			}
 		</style>
 
-
-		<article id="schedule__container" class="schedule__container">
-			<form role="form">
-				<div class="form-group">
-					<input type="search" class="form-control" id="search_box" oninput="filterByName(event)">
-					<label class="float-label" for="search_box">
-						Search filter for presentations
-					</label>
-				</div>
-			</form>
-			
-			
-			<div id="toggle_all_container" style="display:none">
-				<button id="button_toggle__all" class="btn btn--brand expand_more__button expand_all_button" role="button">Open All Sessions</button>
-				<button id="button_close__all" class="btn btn--brand expand_more__button expand_all_button" role="button">Close All Sessions</button>
+		<form role="form" class="filter_form__container">
+			<div class="form-group">
+				<input type="search" class="form-control" id="search_box" oninput="filterByName(event)">
+				<label class="float-label" for="search_box">
+					Search filter for presentations
+				</label>
 			</div>
-			
+		</form>
+		<article id="schedule__container" class="schedule__container">
 			<div class="no-result" style="display:none">
         <div class="no_result__logo">
           <svg id="sigdoc-23-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 222.47 226.03" style="translate: none; rotate: none; scale: none; transform: translate(-50%, -50%);">
@@ -348,22 +340,6 @@
 		</article>
 
 		<script>
-			// Expand button
-			let expandAllButton = document.getElementById('button_toggle__all')
-			let closeAllButton = document.getElementById('button_close__all')
-			let allScheduleDayContainers = document.querySelectorAll('div.schedule__day_container')
-			closeAllButton.setAttribute('style','margin-left:5px;')
-			expandAllButton.addEventListener("click", (e) => {
-				toggleAllVisibility(e)
-			})
-			closeAllButton.addEventListener("click", (e) => {
-				toggleCloseAllVisibility(e)
-			})
-
-			// Append
-			let toggleScheduleContainer = document.getElementById('toggle_all_container')
-			toggleScheduleContainer.appendChild(expandAllButton)
-			toggleScheduleContainer.appendChild(closeAllButton)
 
 			const stageDisplayer = (guideSlotContainer) => {
 				let stageContainer = guideSlotContainer.parentElement.parentElement
@@ -390,7 +366,6 @@
 				}
 
 			}
-
 
 			const filterByName = (e) => {
 				const items = document.querySelectorAll(".guide-slot_card")
@@ -440,34 +415,4 @@
 				})
 			}
 
-			// Expand All Button
-			const toggleAllVisibility = (e) => {
-				let className = ".schedule__stage_guide-container"
-				className = className.replaceAll("'", "")
-				className = className.replaceAll("&_", "")
-				className = className.replaceAll("/", "")
-				const cardElements = document.querySelectorAll(className)
-
-				// OPEN ALL Cards
-				cardElements.forEach((element) => {
-					element.style.display = "grid"
-					element.setAttribute('aria-expanded', "true")
-					show(element)
-				})
-			}
-
-			// Close All Button
-			const toggleCloseAllVisibility = (e) => {
-				let className = ".schedule__stage_guide-container"
-				className = className.replaceAll("'", "")
-				className = className.replaceAll("&_", "")
-				className = className.replaceAll("/", "")
-				const cardElements = document.querySelectorAll(className)
-
-				// OPEN ALL Cards
-				cardElements.forEach((element) => {
-					element.setAttribute('aria-expanded', "false")
-					hide(element)
-				})
-			}
 		</script>

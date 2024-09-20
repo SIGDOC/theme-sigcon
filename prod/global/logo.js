@@ -1,5 +1,24 @@
 // Register GSAP plugins (once) before using them
-gsap.registerPlugin(DrawSVGPlugin);
+gsap.registerPlugin(DrawSVGPlugin)
+gsap.registerPlugin(ScrollTrigger)
+
+/**
+ * Navigation header menu show/hide
+**/
+const toggleShowAnim = gsap.from('div.header', { 
+  yPercent: -100,
+  paused: true,
+  duration: 0.2
+}).progress(1)
+
+ScrollTrigger.create({
+  start: "top top",
+  end: "max",
+  markers: false,
+  onUpdate: (self) => {
+    self.direction === -1 ? toggleShowAnim.play() : toggleShowAnim.reverse()
+  }
+})
 
 /* layout adjustment */
 
