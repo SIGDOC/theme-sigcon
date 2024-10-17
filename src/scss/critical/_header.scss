@@ -71,6 +71,7 @@ $desktop-menu-mq: 'min-width: #{$desktop-mq}';
   // menu <ul>
   .navbar-nav {
     display: flex;
+    flex-wrap: wrap;
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
@@ -133,6 +134,7 @@ $desktop-menu-mq: 'min-width: #{$desktop-mq}';
     }
 
     .nav-item {
+      margin-top: 1rem;
       &:not(:last-of-type) {
         margin-right: 15px;
       }
@@ -150,6 +152,7 @@ $desktop-menu-mq: 'min-width: #{$desktop-mq}';
         top: 100%;
         background: var(--accentColor);
         box-shadow: 0 0 10px rgba(var(--accentShade4), 0.3);
+        z-index: 4;
 
         &__inner {
           padding: 8px;

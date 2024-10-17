@@ -247,6 +247,18 @@ const writeDaySessions = async (perDayPerSession, perRoom) => {
 					themeP.innerHTML = perRoom[sessionType][roomKey][0].theme
 					room.appendChild(themeP)
 				}
+				// Append moderator, if value not empty
+				if (perRoom[sessionType][roomKey][0].moderator.length > 0) {
+					let moderatorNameSPAN = document.createElement('span')
+					moderatorNameSPAN.className = "fw__400"
+					moderatorNameSPAN.innerHTML = perRoom[sessionType][roomKey][0].moderator
+
+					let moderatorNameP = document.createElement('p')
+					moderatorNameP.className = "room_theme"
+					moderatorNameP.innerHTML = "Moderator: "
+					moderatorNameP.appendChild(moderatorNameSPAN)
+					room.appendChild(moderatorNameP)
+				}
 
 				// Append presentations
 				let presCardsPerRoom = 0
@@ -260,15 +272,52 @@ const writeDaySessions = async (perDayPerSession, perRoom) => {
 					let presentationCard = document.createElement('div')
 					presentationCard.className = "guide-slot_card"
 					room.appendChild(presentationCard)
-					// Append presentation content to card
-					let presTitleH6 = document.createElement('h6')
-					presTitleH6.innerHTML = presentation.titles
-					presentationCard.appendChild(presTitleH6)
+
+					// Add remote presentation link, if available
+					if (presentation.remote == "FALSE" && presentation.ignite == "FALSE" && presentation.keynote == "FALSE") {
+						// Append presentation content to card
+						let presTitleH6 = document.createElement('h6')
+						presTitleH6.innerHTML = presentation.titles
+						presentationCard.appendChild(presTitleH6)
+					} 
+					else if (presentation.remote == "TRUE") {
+						let remotePresAnchor = document.createElement('a')
+						remotePresAnchor.href = presentation.remote_url
+						remotePresAnchor.target = "_blank"
+						remotePresAnchor.rel = "nooppenner noreferrer"
+						// Append presentation content to card
+						let presTitleH6 = document.createElement('h6')
+						presTitleH6.innerHTML = presentation.titles
+						remotePresAnchor.appendChild(presTitleH6)
+						presentationCard.appendChild(remotePresAnchor)
+					}
+					// Add IGNITE page link, if available
+					else if (presentation.ignite == "TRUE") {
+						let ignitePresAnchor = document.createElement('a')
+						ignitePresAnchor.href = presentation.ignite_url
+						// Append presentation content to card
+						let presTitleH6 = document.createElement('h6')
+						presTitleH6.innerHTML = presentation.titles
+						ignitePresAnchor.appendChild(presTitleH6)
+						presentationCard.appendChild(ignitePresAnchor)
+					}
+					// Add KEYNOTE page link, if available
+					else if (presentation.keynote == "TRUE") {
+						let keynotePresAnchor = document.createElement('a')
+						keynotePresAnchor.href = presentation.keynote_url
+						// Append presentation content to card
+						let presTitleH6 = document.createElement('h6')
+						presTitleH6.innerHTML = presentation.titles
+						keynotePresAnchor.appendChild(presTitleH6)
+						presentationCard.appendChild(keynotePresAnchor)
+					} 
+					
 					// Append presenters
 					let presenterNamesP = document.createElement('p')
 					presenterNamesP.className = "presenters"
 					presenterNamesP.innerHTML = presentation.presenters
 					presentationCard.appendChild(presenterNamesP)
+					
 				})
 				// Append cards per room
 				room.dataset.presentationCount = String(presCardsPerRoom)

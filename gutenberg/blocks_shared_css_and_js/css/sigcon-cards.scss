@@ -26,6 +26,7 @@
         padding: 1.75em;
         margin: 3em 0 3em 0;
         box-shadow: 1px 2px 2px -1px var(--primaryColor);
+        background-color: var(--accentShade3);
 
         .card__main_image { 
           flex: 1 0 250px;
@@ -118,10 +119,15 @@
   }
   .card__regular_wrapped_flex .card__inner_wrapper {
     display: block !important;
-    flex: 0 1 305px;
+    flex: 1 1 518px;
 
     & > .card__main_image {
       margin: 1em 0;
+
+      & > .tr-img-wrap-outer {
+        margin: auto;
+        width: 270px !important;
+      }
     }
   }
   .card__regular_wrapped_flex .card__main_image {
