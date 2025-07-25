@@ -83,9 +83,6 @@ loadScriptsInOrder(resourceList)
 })
 .catch( err => {
 
-  //- let noScriptCSS = "<style type='text/css'>body #wrap {transform: translateX(0);}body #wrap .panel {--progress: 0.5 !important;}body #wrap .panel, body #wrap .panel::before {opacity: 1 }body #wrap .panel>a h2 {color: var(--primaryColor) !important }body #wrap .panel .thumb p {font-size: 18px;}body #loader, body #loader .wrap {display: none;}body #social svg {transform: translateY(0);}body #social a:last-of-type svg {transform: translateX(0px);}</style>"
-  //- document.body.appendChild(noScriptCSS);
-
   //- Set --progress count for  the static page
   async function* applyNoJsPanelStyles() {
     let panels = document.querySelectorAll(".panel");

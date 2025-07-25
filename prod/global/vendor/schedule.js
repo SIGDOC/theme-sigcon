@@ -1,3 +1,12 @@
+/**
+ * schedule.js: Functions to build the schedule programatically via the provided
+ * /prod/global/vendor/sigdoc-schedule.csv file.
+ * Important @params
+ * -- /prod/global/vendor/sigdoc-schedule.csv
+ * @return
+ * -- Rendered HTML of schedule data that is searchable via searchbar
+ */
+
 // Show an element
 const show = (elem) => {
 	const getHeight = () => {
@@ -399,6 +408,7 @@ const getData = (fp) => {
 	})
 }
 
+// Start building the schedule
 (async function () {
 	await getData(tr_theme_url+"/prod/global/vendor/sigdoc-schedule.csv")
 		.then(async (result) => {

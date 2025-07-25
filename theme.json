@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "patterns": [
+    
+    "gutenberg/blocks/sigcon-landing-cards-flexrow",
+    "gutenberg/blocks/sigcon-page-intro-card",
+    "gutenberg/blocks/sigcon-page-card-paragraph-feature",
+    "gutenberg/blocks/sigcon-section-content",
+
+    "gutenberg/blocks/sigcon-sponsor-gallery",
+    "gutenberg/blocks/sigcon-workshops-collapsible-filterable",
+    "gutenberg/blocks/sigcon-poster-session-cards",
+
+    "gutenberg/blocks/sigcon-cards-flex-thin",
+    "gutenberg/blocks/sigcon-cards-left-float-img-and-txt",
+    "gutenberg/blocks/sigcon-hero-colorful-title"
+
+  ],
+  "settings": {},
+  "styles": {},
+  "templateParts": [],
+  "customTemplates": []
+}
