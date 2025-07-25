@@ -30,85 +30,108 @@ Use this layout for the SIGDOC program page.
 
 Custom blocks are located in the `gutenberg > blocks` folder area.
 
-### Flexbox thin cards
+### Flexbox animated and numbered card panels
 
-<img src="gutenberg/blocks/sigcon-cards-flex-thin/example.jpg" width="150px" style="float:left;margin-right:15px" />
+<img src="gutenberg/blocks/sigcon-landing-cards-flexrow/example.jpg" width="250px" />
 
-**Path**: [gutenberg/blocks/sigcon-cards-flex-thin](gutenberg/blocks/sigcon-cards-flex-thin)
+Use to add important attendee actions on the landing page as the conference preparations advance throughout the year. Actions are rendered in reverse order to priortize the current action item of importance.
 
-**Notes**: Main CSS styles are located in a shared cards stylesheet: [gutenberg/blocks_shared_css_and_js/css/sigcon-cards.scss](gutenberg/blocks_shared_css_and_js/css/sigcon-cards.scss). Good for bios about speakers or series of related content that needs a featured image.
+1. Read the CFP
+2. Decide which type of proposal
+3. Submit a proposal
+4. Review proposals
+5. Submit to proceedings
+6. Review proceedings
+7. Register for the conference
+8. Review the program
+9. Policies against harrassment
+10. Keynotes
 
-<br>
-<br>
-<br>
-
-### Cards with left floated images
-
-<img src="gutenberg/blocks/sigcon-cards-left-float-img-and-txt/example.jpg" width="150px" style="float:left;margin-right:15px" />
-
-**Path**: `gutenberg/blocks/sigcon-cards-left-float-img-and-txt`
-
-**Notes**: Good for bios about speakers or series of related content that needs a featured image. It's frontend.scss file overwrites WP's `tr-image-...` styles
+- **Path**: `gutenberg/blocks/sigcon-landing-cards-flexrow`
+- **Notes**: Uses Greensock.js library for the animations. However, it is designed to not require Greensock or javascript in general.
 
 ### Landing page animated and numbered card panels
 
-<img src="gutenberg/blocks/sigcon-landing-cards/example.jpg" width="105px" style="float:left;margin-right:15px" />
+<img src="gutenberg/blocks/sigcon-landing-cards/example.jpg" width="250px" />
 
-**Path**: `gutenberg/blocks/sigcon-landing-cards`
+Alternative landing page block for attendee action items that are animated and linked with a line pathway. Please note, however, this block is only designed to accommodate up to 5 tasks. And, any more than that makes the page too long for easy reading comprehension / a good user experience.
 
-**Notes**: Uses Greensock.js library for the animations. However, it is designed to not require Greensock or javascript in general.
-
-### Flexbox animated and numbered card panels
-
-<img src="gutenberg/blocks/sigcon-landing-cards-flexrow/example.jpg" width="150px" style="float:left;margin-right:15px" />
-
-**Path**: `gutenberg/blocks/sigcon-landing-cards-flexrow`
-
-**Notes**: *Currently designed to account for up to 5 card panels*. Uses Greensock.js library for the animations. However, it is designed to not require Greensock or javascript in general.
-
-### Featured paragraph with styled first letter
-
-<img src="gutenberg/blocks/sigcon-page-card-paragraph-feature/example.jpg" width="150px" style="float:left;margin-right:15px" />
-
-**Path**: `gutenberg/blocks/sigcon-page-card-paragraph-feature`
-
-**Notes**: Good for first paragraph chunk on a longer content page. Use sparingly.
-
-<br>
+- **Path**: [/gutenberg/blocks/sigcon-landing-cards](/gutenberg/blocks/sigcon-landing-cards)
+- **Notes**: Uses Greensock.js library for the animations. However, it is designed to not require Greensock or javascript in general.
 
 ### Intro card for a page
 
-<img src="gutenberg/blocks/sigcon-page-intro-card/example.jpg" width="150px" style="float:left;margin-right:15px" />
+<img src="gutenberg/blocks/sigcon-page-intro-card/example.jpg" width="250px" />
 
-**Path**: `gutenberg/blocks/sigcon-page-intro-card`
+Good to use as the first paragraph on a page for the most important info. Put your top content priorities in here.
 
-**Notes**: Good to use as the first paragraph on a page for the most important info. Put your top content priorities in here.
+- **Path**: [/gutenberg/blocks/sigcon-page-intro-card](/gutenberg/blocks/sigcon-page-intro-card)
+- **Notes**: Includes a built-in "Meet the committee" section, but you can ignore it since it is optional.
 
-<br>
+### Flexbox thin cards
+
+<img src="gutenberg/blocks/sigcon-cards-flex-thin/example.jpg" width="250px" />
+
+Good for bios about speakers or series of related content that needs a featured image.
+
+- **Path**: [gutenberg/blocks/sigcon-cards-flex-thin](gutenberg/blocks/sigcon-cards-flex-thin)
+- **Notes**: Main CSS styles are located in a shared cards stylesheet: [gutenberg/blocks_shared_css_and_js/css/sigcon-cards.scss](gutenberg/blocks_shared_css_and_js/css/sigcon-cards.scss).
+
+### Cards with left floated images
+
+<img src="gutenberg/blocks/sigcon-cards-left-float-img-and-txt/example.jpg" width="250px" />
+
+Good for bios about speakers or series of related content that needs a featured image.
+
+- **Path**: [/gutenberg/blocks/sigcon-cards-left-float-img-and-txt](/gutenberg/blocks/sigcon-cards-left-float-img-and-txt)
+- **Notes**: It's frontend.scss file overwrites WP's `tr-image-...` styles.
+
+### Featured paragraph with styled first letter
+
+<img src="gutenberg/blocks/sigcon-page-card-paragraph-feature/example.jpg" width="250px" />
+
+Good for first paragraph chunk on a longer content page. Use sparingly.
+
+- **Path**: [/gutenberg/blocks/sigcon-page-card-paragraph-feature](/gutenberg/blocks/sigcon-page-card-paragraph-feature)
+- **Notes**:
+
+### Searchable cards for a workshops
+
+Custom content inputs so we can feature workshops on the site. Each item is collapsible and filterable via a searchbar at the top.
+
+<img src="gutenberg/blocks/sigcon-workshops-collapsible-filterable/example.jpg" width="250px" />
+
+- **Path**: [/gutenberg/blocks/sigcon-workshops-collapsible-filterable](/gutenberg/blocks/sigcon-workshops-collapsible-filterable)
+- **Notes**: Currently does not hide some headings, such as References, if not used.
 
 ### Cards for a posters
 
-<img src="gutenberg/blocks/sigcon-poster-session-cards/example.jpg" width="150px" style="float:left;margin-right:15px" />
+Custom content inputs so we can feature poster presentations on the site.
 
-**Path**: `gutenberg/blocks/sigcon-poster-session-cards`
+<img src="gutenberg/blocks/sigcon-poster-session-cards/example.jpg" width="250px" />
 
-**Notes**: If featuring posters on the site.
+- **Path**: [/gutenberg/blocks/sigcon-poster-session-cards](/gutenberg/blocks/sigcon-poster-session-cards)
+- **Notes**:
 
 ### Accessible landmark section regions of content
 
-<img src="gutenberg/blocks/sigcon-section-content/example.jpg" width="150px" style="float:left;margin-right:15px" />
+Create accessbile landmarks to break up larger/longer pages of content.
+
+<img src="gutenberg/blocks/sigcon-section-content/example.jpg" width="250px" />
 
 **Path**: `gutenberg/blocks/sigcon-section-content`
 
-**Notes**: Create accessbile landmarks to break up larger/longer pages of content.
+**Notes**:
 
 ### Sponsors Gallery
 
-<img src="gutenberg/blocks/sigcon-sponsor-gallery/example.jpg" width="150px" style="float:left;margin-right:15px" />
+Create a gallery of sponsor logos, where each logo can be provided a URL to their desired site.
+
+<img src="gutenberg/blocks/sigcon-sponsor-gallery/example.jpg" width="250px" />
 
 **Path**: `gutenberg/blocks/sigcon-sponsor-gallery`
 
-**Notes**: Create a gallery of sponsor logos, where each logo can be provided a URL to their desired site.
+**Notes**:
 
 ## THEME REDONE & GUTENBERG BLOCK LESSONS LEARNED
 
