@@ -1,0 +1,41 @@
+<div class="header">
+  <div class="header__navbar_container-flex container">
+    
+    <div class="header__navbar-main_info">
+      <a href="{esc_url( home_url( '/' ) )}">
+        <img src="{esc_url( home_url( '/wp-content/themes/theme-sigcon/assets/img/sigdoc-logo-transparent-75x75.png' ) )}" alt="" />
+      </a>
+      <p>{get_bloginfo('title')}</p>
+      <p>
+        {get_theme_mod('sigcon_conf_location_text')} | {get_theme_mod('sigcon_conf_daterange_text')}
+      </p>
+    </div>
+    
+    <nav class="navbar">
+      <button 
+        class="navbar-toggler collapsed" 
+        type="button" 
+        data-toggle="collapse" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation"
+      >
+        <span class="span-icon"></span>
+        <span class="span-icon"></span>
+        <span class="span-icon"></span>
+      </button>
+      {wp_nav_menu([
+        'menu'            => 'top',
+        'theme_location'  => 'menu-1',
+        'container'       => 'div',
+        'container_id'    => 'tr-main-menu',
+        'container_class' => 'navbar-collapse',
+        'menu_id'         => 'primary-menu',
+        'menu_class'      => 'navbar-nav',
+        'depth'           => 2,
+        'fallback_cb'     => 'ThemeRedoneWalker::fallback',
+        'walker'          => new ThemeRedoneWalker()
+      ])}
+    </nav> 
+
+  </div>{* cont *}
+</div>

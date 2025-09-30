@@ -1,0 +1,489 @@
+.is-visible {
+  display: block !important;
+	height: auto !important;
+  opacity: 1 !important;
+}
+
+.divider {
+  position: sticky;
+  left: 0;
+  border: none;
+  border-bottom: 35px solid var(--accentColor);
+  margin-bottom: 2rem;
+}
+
+.heading {
+  line-height: 2;
+  font-weight: 900;
+}
+
+// FORM
+form.filter_form__container {
+  position: sticky;
+  top: 65px;
+  z-index: 1;
+  background: var(--backgroundColor);
+  padding: 15px;
+  margin-left: -5px;
+  box-shadow: 0px 1px 1px 0px var(--primaryColor);
+
+  & input {
+    margin-top: 2px;
+    margin-left: 2px;
+  }
+  & label {
+    // padding: 0 1rem 2px 1rem;
+    padding: 0 1rem 2px 0rem;
+    font-size: 0.9rem;
+  }
+}
+
+// MOBILE-FIRST - SMall Screens
+.schedule__container {
+  margin: auto;
+  max-width: 800px;
+  background: var(--backgroundColor);
+  color: var(--backgroundColor);
+
+  .schedule__day_container,
+  .schedule__session_type_wrapper {
+    display: inline-block;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--headingFonts);
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--primaryColor);
+  }
+
+  h1 { font-size: 4rem; }
+  h2 { font-size: clamp(30px,10vw,48px); margin: 2rem 0; }
+  h3 { font-size: 2.5rem;}
+  h3 {
+    margin: 3rem 0 2rem 0.2rem !important;
+  }
+  h4 { font-size: 1.75rem;}
+  h4 {
+    margin: 0;
+    background: var(--primaryColor);
+    background: linear-gradient(to right, var(--primaryColor), var(--secondaryColor), var(--accentColor));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800 !important;
+  }
+  p.session_time {
+    margin: 0;
+  }
+
+}
+
+.schedule__session {
+  position: relative;
+}
+
+.schedule__day_container {
+  // BUTTON EFFECT
+  & button {
+    --borderWidth: 3;
+    --boxShadowDepth: 0;
+    --buttonColor: var(--primaryColor);
+    --fontSize: 1;
+    --horizontalPadding: 16;
+    --verticalPadding: 8;
+    background: transparent;
+    border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
+    // box-shadow: calc(var(--boxShadowDepth) * 1px) calc(var(--boxShadowDepth) * 1px) 0 #888;
+    color: var(--buttonColor);
+    cursor: pointer;
+    font-size: calc(var(--fontSize) * 1rem);
+    outline: transparent;
+    padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px);
+    position: relative;
+    transition: box-shadow 0.15s ease;
+    width: 250px;
+    font-weight: 600;
+    
+    &> span {
+      -webkit-clip-path: var(--clip);
+      bottom: calc(var(--borderWidth) * -1px);
+      clip-path: var(--clip);
+      left: calc(var(--borderWidth) * -1px);
+      position: absolute;
+      right: calc(var(--borderWidth) * -1px);
+      top: calc(var(--borderWidth) * -1px);
+      z-index: 1;
+      
+      &:nth-of-type(1):hover,
+      &:nth-of-type(2):hover,
+      &:nth-of-type(3):hover,
+      &:nth-of-type(4):hover { --clip: polygon(0 0, 100% 0, 100% 100%, 0 100%); z-index: 2; }
+      &:nth-of-type(1):hover ~ b:nth-of-type(1),
+      &:nth-of-type(2):hover ~ b:nth-of-type(2),
+      &:nth-of-type(3):hover ~ b:nth-of-type(3),
+      &:nth-of-type(4):hover ~ b:nth-of-type(4) { --clip: inset(0 0 0 0); }
+      &:nth-of-type(1) { --clip: polygon(0 0, 100% 0, 50% 50%, 50% 50%); }
+      &:nth-of-type(2) { --clip: polygon(100% 0, 100% 100%, 50% 50%); }
+      &:nth-of-type(3) { --clip: polygon(0 100%, 100% 100%, 50% 50%); }
+      &:nth-of-type(4) { --clip: polygon(0 0, 0 100%, 50% 50%); }
+    }
+    &> b {
+      -webkit-clip-path: var(--clip);
+      background: var(--buttonColor);
+      border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
+      bottom: calc(var(--borderWidth) * -1px);
+      font-weight: bold;
+      clip-path: var(--clip);
+      color: var(--bg, #fafafa);
+      left: calc(var(--borderWidth) * -1px);
+      padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px);
+      position: absolute;
+      right: calc(var(--borderWidth) * -1px);
+      top: calc(var(--borderWidth) * -1px);
+      transition: -webkit-clip-path 0.25s ease;
+      transition: clip-path 0.25s ease;
+      transition: clip-path 0.25s ease, -webkit-clip-path 0.25s ease;
+      
+      &:nth-of-type(1) { --clip: inset(0 0 100% 0); }
+      &:nth-of-type(2) { --clip: inset(0 0 0 100%); }
+      &:nth-of-type(3) { --clip: inset(100% 0 0 0); }
+      &:nth-of-type(4) { --clip: inset(0 100% 0 0); }
+    }
+  }
+}
+
+.schedule__session_title {
+  background: linear-gradient(to right, var(--backgroundColor) 30%, hsla(0,0%,0%,0));
+
+  .time {
+    color: var(--primaryColor);
+    font-size: 1.5rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+}
+
+.schedule__stage_guide-container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 290px;
+  grid-gap: 1.25rem;
+}
+
+.guide-slot {
+  position: relative;
+
+  & > h5 {
+    position: relative;
+    font-size: 1.15rem;
+    text-transform: none;
+    background: var(--primaryColor);
+    color: var(--accentShade1);
+    padding: 0.5rem;
+    box-shadow: -1px -2px 0px 0px #000;
+  }
+  & > p.room_theme {
+    font-size: 1rem;
+    font-weight: 600;
+    background: var(--primaryColor);
+    color: var(--accentShade1);
+    margin: 0;
+    padding: 0 0.5rem 0.5rem 0.5rem;
+    box-shadow: -1px -2px 0px 0px #000;
+  }
+
+  .guide-slot_card {
+    font-size: 1.4rem;
+    transition-duration: 0.3s;
+    margin: 0 0 1rem 0.5rem;
+  
+    &:hover {
+      border-color: var(--secondaryColor);
+      transition-duration: 0.3s;
+    }
+
+    // If no remote presentaiton link
+    & > h6 {
+      background: var(--backgroundColor);
+      background: linear-gradient(to right,var(--primaryColor),var(--secondaryShade5),var(--primaryColor));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: rgba(0,0,0,0);
+      font-size: 1.05rem;
+      font-weight: 500;
+      text-transform: none;
+    }
+    // If linked remote presentation
+    & > a {
+      background: unset;
+      text-transform: none;
+      text-decoration: underline;
+      transition: .16s;
+      &:hover {
+        background: unset;
+        background-size: unset;
+        padding: 0;
+        transition: .16s;
+        text-decoration: none;
+      }
+      & > h6 {
+        color: var(--primaryColor);
+        background: unset;
+        font-size: 1.05rem;
+        font-weight: 500;
+        text-transform: none;
+      }
+    }
+  
+    p.presenters {
+      font-family: var(--copyFonts);
+      font-weight: 500;
+      margin: 0.1rem 0 0 0.5rem;
+      padding: 0;
+      font-size: 0.81rem;
+      list-style-type: none;
+    }
+  }
+}
+
+// Medium-to-Large Screens; ensures iPads receive program tabulated
+@media screen and (min-width: 1025px) {
+  .is-visible {
+    display: grid !important;
+    height: auto !important;
+    opacity: 1 !important;
+  }
+
+  // FORM
+  form.filter_form__container {
+    position: sticky;
+    top: 50px;
+    width: max-content;
+    margin-left: 1rem;
+  }
+
+  .schedule__container {
+    max-width: 100%;
+    margin: 0 1rem;
+    // overflow: auto;
+    overflow-x: auto;
+  
+    .schedule__day_container,
+    .schedule__session_type_wrapper {
+      display: inline-block;
+    }
+  
+    h3 {
+      margin: 4rem 0 2rem 0.2rem !important;
+    }
+    h4 {
+      background: var(--backgroundColor);;
+      -webkit-background-clip: initial;
+      -webkit-text-fill-color: initial;
+    }
+    p.session_time {
+      margin: 0;
+    }
+  
+  }
+  
+  .schedule__session {
+    display: grid;
+    grid-auto-columns: 290px;
+    grid-auto-flow: column;
+    grid-gap: 2rem;
+    padding-bottom: 5rem;
+    padding-top: 2rem;
+    min-width: 100vw;
+    margin-top: 4rem;
+  
+    &::after {
+      content: "";
+      width: var(--padding);
+    }
+  }
+  
+  .schedule__day_container {
+    h3 { font-size: 2.75rem;}
+    h4 { font-size: 2.15rem;}
+    h4 {
+      background: var(--primaryColor);
+      background: linear-gradient(to right, var(--primaryColor), var(--secondaryColor), var(--accentColor));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800 !important;
+    }
+    // BUTTON EFFECT
+    & button {
+      --borderWidth: 3;
+      --boxShadowDepth: 0;
+      --buttonColor: var(--primaryColor);
+      --fontSize: 1;
+      --horizontalPadding: 16;
+      --verticalPadding: 8;
+      background: transparent;
+      border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
+      // box-shadow: calc(var(--boxShadowDepth) * 1px) calc(var(--boxShadowDepth) * 1px) 0 #888;
+      color: var(--buttonColor);
+      cursor: pointer;
+      font-size: calc(var(--fontSize) * 1rem);
+      outline: transparent;
+      padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px);
+      position: relative;
+      transition: box-shadow 0.15s ease;
+      width: 250px;
+      font-weight: 600;
+      
+      &> span {
+        -webkit-clip-path: var(--clip);
+        bottom: calc(var(--borderWidth) * -1px);
+        clip-path: var(--clip);
+        left: calc(var(--borderWidth) * -1px);
+        position: absolute;
+        right: calc(var(--borderWidth) * -1px);
+        top: calc(var(--borderWidth) * -1px);
+        z-index: 1;
+        
+        &:nth-of-type(1):hover,
+        &:nth-of-type(2):hover,
+        &:nth-of-type(3):hover,
+        &:nth-of-type(4):hover { --clip: polygon(0 0, 100% 0, 100% 100%, 0 100%); z-index: 2; }
+        &:nth-of-type(1):hover ~ b:nth-of-type(1),
+        &:nth-of-type(2):hover ~ b:nth-of-type(2),
+        &:nth-of-type(3):hover ~ b:nth-of-type(3),
+        &:nth-of-type(4):hover ~ b:nth-of-type(4) { --clip: inset(0 0 0 0); }
+        &:nth-of-type(1) { --clip: polygon(0 0, 100% 0, 50% 50%, 50% 50%); }
+        &:nth-of-type(2) { --clip: polygon(100% 0, 100% 100%, 50% 50%); }
+        &:nth-of-type(3) { --clip: polygon(0 100%, 100% 100%, 50% 50%); }
+        &:nth-of-type(4) { --clip: polygon(0 0, 0 100%, 50% 50%); }
+      }
+      &> b {
+        -webkit-clip-path: var(--clip);
+        background: var(--buttonColor);
+        border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
+        bottom: calc(var(--borderWidth) * -1px);
+        font-weight: bold;
+        clip-path: var(--clip);
+        color: var(--bg, #fafafa);
+        left: calc(var(--borderWidth) * -1px);
+        padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px);
+        position: absolute;
+        right: calc(var(--borderWidth) * -1px);
+        top: calc(var(--borderWidth) * -1px);
+        transition: -webkit-clip-path 0.25s ease;
+        transition: clip-path 0.25s ease;
+        transition: clip-path 0.25s ease, -webkit-clip-path 0.25s ease;
+        
+        &:nth-of-type(1) { --clip: inset(0 0 100% 0); }
+        &:nth-of-type(2) { --clip: inset(0 0 0 100%); }
+        &:nth-of-type(3) { --clip: inset(100% 0 0 0); }
+        &:nth-of-type(4) { --clip: inset(0 100% 0 0); }
+      }
+    }
+  }
+  
+  .schedule__session_title {
+    text-align: end;
+    width: 350px;
+    position: sticky;
+    left: 0;
+    padding-right: 5rem;
+    height: 100%;
+    padding-left: var(--padding);
+    background: linear-gradient(to right, var(--backgroundColor) 30%, hsla(0,0%,0%,0));
+  
+    .time {
+      color: var(--primaryColor);
+      font-size: 1.5rem;
+      font-weight: bolder;
+      text-transform: uppercase;
+    }
+  }
+  
+  .schedule__stage_guide-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 290px;
+    grid-gap: 1.25rem;
+  }
+  
+  .guide-slot {
+    position: unset;
+
+    & > h5 {
+      font-size: 1.75rem;
+      text-transform: none;
+      padding: 1rem;
+      // height: 6ch;
+      height: auto;
+      background: #f3faff00;
+      color: var(--primaryColor);
+      box-shadow: none;
+    }
+    & > p.room_theme {
+      font-size: 1rem;
+      background: var(--backgroundColor);
+      color: var(--primaryColor);
+      font-weight: 600;
+      // margin-top: -3rem;
+      margin: 0;
+      padding: 0 0 0 1rem;
+      // height: 4ch;
+      box-shadow: none;
+    }
+    .guide-slot_card {
+      background: var(--primaryColor);
+      border: 2px solid var(--backgroundColor);
+      border-radius: 0.8rem;
+      // font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      transition-duration: 0.3s;
+      min-height: 180px;
+    
+      &:hover {
+        border-color: var(--secondaryColor);
+        transition-duration: 0.3s;
+      }
+
+      // IF NO link to remote presentation
+      & > h6 {
+        margin: 0 0 1rem 0;
+        font-size: 1rem;
+        color: var(--accentColor);
+        background: inherit;
+          -webkit-background-clip: none;
+          -webkit-text-fill-color: initial;
+      }
+      // IF link to remote presentation
+      & > a {
+        color: var(--accentColor);
+        text-decoration: underline;
+        background: unset;
+        transition: .16s;
+
+        &:hover {
+          text-decoration: none;
+          transition: .16s;
+        }
+
+        & > h6 {
+          margin: 0 0 1rem 0;
+          font-size: 1rem;
+          color: var(--accentColor);
+          background: inherit;
+            -webkit-background-clip: none;
+            -webkit-text-fill-color: initial;
+        }
+      }
+    
+      p.presenters {
+        font-family: var(--copyFonts);
+        color: var(--backgroundColor);
+        margin: 0;
+        padding: 0;
+        font-size: 0.9rem;
+        list-style-type: none;
+      }
+    }
+  }
+}

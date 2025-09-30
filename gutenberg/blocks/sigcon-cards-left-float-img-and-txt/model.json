@@ -1,0 +1,102 @@
+{
+  "block_meta": {
+    "BLOCK_REGISTER_NAME": "sigcon-cards-left-float-img-and-txt",
+    "BLOCK_TITLE": "SIGCON Flexible Cards with Left-Aligned Floated Image and Text",
+    "keywords": ["cards", "image and text", "flexible"],
+    "hasSidebar": false,
+    "hasExample": true,
+    "deps": {
+      "css": ["sigcon-cards"]
+    }
+  },
+
+  "attributes": {
+    "section_id": {
+      "type": "object",
+      "field_meta": {
+        "type": "text",
+        "label": "Section ID",
+        "help":"Add an ID to the section for inbound navigation purposes. It must be unique from all other elements on the page. Hyphenate between words, so do NOT use spaces, e.g., #section-id-inbound-link"
+      },
+      "default": {
+        "text": ""
+      }
+    },
+    "section_h2": {
+      "type": "object",
+      "field_meta": {
+        "type": "text",
+        "label": "Section Heading"
+      },
+      "default": {
+        "text": ""
+      }
+    },
+    "cards": {
+      "type": "array",
+      "field_meta": {
+        "type": "repeater",
+        "label": "Cards",
+
+        "subfields": {
+          "main_image": {
+            "type": "object",
+            "field_meta": {
+              "type": "image"
+            },
+            "default": {
+              "src": "",
+              "alt": "",
+              "subtype": "",
+              "id": null
+            }
+          },
+          "main_name": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Main Name (H2)"
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "sub_name": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Sub-Name"
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "link": {
+            "type": "object",
+            "field_meta": {
+              "type": "cta",
+              "label": "Link"
+            },
+            "default": {
+              "title": "",
+              "url": "",
+              "target": "_blank",
+              "rel": "noreferrer noopenner"
+            }
+          },
+          "paragraph": {
+            "type": "object",
+            "field_meta": {
+              "type": "freeform",
+              "help": "This is a rich-text content field for the card. Only include 1 paragraph."
+            },
+            "default": {
+              "text": ""
+            }
+          }
+        }
+      },
+      "default": []
+    }
+  }
+}

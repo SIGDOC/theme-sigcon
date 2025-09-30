@@ -1,0 +1,50 @@
+<!-- START FLEX CARD SECTION -->
+<section n:if="!empty($cards)" 
+         role="region"
+         aria-labelledby="{$section_id['text']}"
+         class="sigcon-relative card__sections">
+  
+  <!-- Start Flex Thin Cards -->
+  <div class="cards__main_external_wrapper card__regular_wrapped_flex">
+
+    <h2 id="{$section_id['text']}">{$section_h2['text']}</h2>
+
+    <div class="cards__sub_container">
+    
+      <!-- Start Card Loop -->
+      <div class="card__inner_wrapper"
+            n:foreach="$cards as $card"
+            n:ifcontent>
+
+        <!-- image -->
+        <div class="card__main_image">
+
+          {* IF EMPTY, USE PLACEHOLDER *}
+          {if empty($card['image']['src'])}
+            <img class="card__main_image" src="{esc_url( home_url( '/wp-content/themes/theme-sigcon/assets/img/placeholder-sigdoc-logo.jpg' ) )}" alt="" />
+          {/if}
+
+          {if !empty($card['image']['src'])}
+            {tr_get_media($card['image'], true)}
+          {/if}
+        </div>
+
+        <!-- text area -->
+        <div class="card__desc_wrapper">
+          <h3 class="card__main_name">{$card['main_heading']['text']}</h3>
+          <p class="card__sub_name">
+            {$card['sub_heading']['text']}
+          </p>
+          <p n:ifcontent>
+            <a n:ifcontent href="{$card['link']['url']}|noescape" target="_blank">{$card['link']['title']|noescape}</a>
+          </p>
+          <p>
+            {$card['para_copy']['text']|noescape}
+          </p>
+        </div>
+      </div>
+      <!-- End Card Loop -->
+
+    </div>
+  </div>
+</section>

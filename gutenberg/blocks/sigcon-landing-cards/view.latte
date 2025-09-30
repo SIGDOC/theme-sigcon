@@ -1,0 +1,64 @@
+<div id="landing-cards-wrap">
+  <section class="landing-cards-flex-container"
+        role="region"
+        aria-label="Action items for the conference"
+        n:if="!empty($panels)">
+
+    <article n:foreach="$panels as $panel"
+             n:ifcontent
+             class="panel">
+      <a href="{$panel['panel_cta_link']['url']|noescape}">
+        <h2 n:ifcontent aria-label="{$panel['main_heading']['text']|noescape}" data-splitting="words">
+          {$panel['main_heading']['text']|noescape}
+        </h2>
+      </a>
+      <div class="thumb">
+        <p n:ifcontent>{$panel['keyword_1']['text']|noescape} &bull; {$panel['keyword_2']['text']|noescape} &bull; {$panel['keyword_3']['text']|noescape}</p>
+        <div class="inner">
+          <a n:ifcontent class="thumb-link" href="{$panel['panel_cta_link']['url']|noescape}">
+            {tr_get_media($panel['main_image'], false)}
+          </a>
+        </div>
+      </div>
+    </article>
+    
+  </section>
+</div>
+
+<noscript>
+  <style type="text/css">
+    body #wrap {
+      transform: translateX(0); /*defaults to 100%*/
+    }
+    body #wrap .panel {
+      --progress: 0.5; /*defaults to 0*/
+    }
+    
+    body #wrap .panel,
+    body #wrap .panel::before {
+      opacity: 1 /*defaults to 0*/
+    }
+    
+    body #wrap .panel > a h2 {
+      color: var(--primaryColor); /*defaults to transparent*/
+      pointer-events: unset;
+      transform: translateY(calc(100px - (var(--progress) * 200px)));
+    }
+    
+    body #wrap .panel .thumb p {
+      font-size: 18px;
+    }
+    
+    body #loader,
+    body #loader .wrap {
+      display: none;
+    }
+    
+    body #social svg {
+      transform: translateY(0); /*defaults to -150px*/
+    }
+    body #social a:last-of-type svg {
+      transform: translateX(0px); /*defaults to 150px*/
+    }
+  </style>
+</noscript>

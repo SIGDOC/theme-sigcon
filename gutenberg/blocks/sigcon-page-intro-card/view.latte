@@ -1,0 +1,30 @@
+<div id="intro-card-container">
+  <section role="region" 
+        aria-label="{$aria_label['text']|noescape}">
+
+    <div n:ifcontent class="panel panel__preface">
+      <div class="thumb">
+        <div class="inner">
+
+          <div class="drop_case_second_paragraph_letter__container">
+            {$main_content['text']|noescape}
+          </div>
+          <h2 n:ifcontent aria-label="{$panel['main_heading']['text']|noescape}" data-splitting="words">
+            {$main_heading['text']|noescape}
+          </h2>
+          <!-- Start list of conference committee -->
+          <ul n:if="!empty($roles)">
+            <li n:foreach="$roles as $role" 
+                 n:ifcontent
+                 class="" 
+                 role="region">
+              <strong>{$role['title']['text']|noescape}</strong>: {$role['name']['text']|noescape}, {$role['affiliation']['text']|noescape}, {$role['country']['text']|noescape}
+            </li>
+          </ul>
+          
+        </div><!--/inner-->
+      </div><!--/thumb-->
+    </div><!--/panel-->
+    
+  </section>
+</div>

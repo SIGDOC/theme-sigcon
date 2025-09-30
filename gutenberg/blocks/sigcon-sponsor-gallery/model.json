@@ -1,0 +1,46 @@
+{
+  "block_meta": {
+    "BLOCK_REGISTER_NAME": "sigcon-sponsor-gallery",
+    "BLOCK_TITLE": "SIGDOC Conference Sponsors Gallery",
+    "keywords": ["sponsors", "gallery"],
+    "hasSidebar": false,
+    "hasExample": true
+  },
+
+  "attributes": {
+    "sponsors": {
+      "type": "array",
+      "field_meta": {
+        "type": "repeater",
+        "label": "Add Sponsor",
+        "grid": 2,
+        "subfields": {
+          "sponsor_logo": {
+            "type": "object",
+            "field_meta": {
+              "type": "image",
+              "label": "Logo/Image"
+            },
+            "default": {
+              "src": "",
+              "alt": "",
+              "subtype": "",
+              "id": null
+            }
+          },
+          "sponsor_link": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Add link to sponsor website"
+            },
+            "default": {
+              "text": ""
+            }
+          }
+        }
+      },
+      "default": []
+    }
+  }
+}

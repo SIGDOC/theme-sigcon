@@ -1,0 +1,100 @@
+{
+  "block_meta": {
+    "BLOCK_REGISTER_NAME": "sigcon-cards-flex-thin",
+    "BLOCK_TITLE": "SIGCON Flexible Full to Thin Cards",
+    "keywords": ["flexible", "cards"],
+    "hasSidebar": false,
+    "hasExample": true,
+    "deps": {
+      "css": ["sigcon-cards"]
+    }
+  },
+
+  "attributes": {
+    "section_id": {
+      "type": "object",
+      "field_meta": {
+        "type": "text",
+        "label": "Section ID",
+        "help":"Add an ID to the section for inbound navigation purposes. Hyphenate between words, so do NOT use spaces, e.g., #section-id-inbound-link"
+      },
+      "default": {
+        "text": ""
+      }
+    },
+    "section_h2": {
+      "type": "object",
+      "field_meta": {
+        "type": "text",
+        "label": "Section Heading"
+      },
+      "default": {
+        "text": ""
+      }
+    },
+    "cards": {
+      "type": "array",
+      "field_meta": {
+        "type": "repeater",
+        "label": "Cards",
+
+        "subfields": {
+          "image": {
+            "type": "object",
+            "field_meta": {
+              "type": "image"
+            },
+            "default": {
+              "src": "",
+              "alt": "",
+              "subtype": "",
+              "id": null
+            }
+          },
+          "main_heading": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Main Heading"
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "sub_heading": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Sub-Heading Italicized"
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "link": {
+            "type": "object",
+            "field_meta": {
+              "type": "cta",
+              "label": "Link"
+            },
+            "default": {
+              "title": "",
+              "url": ""
+            }
+          },
+          "para_copy": {
+            "type": "object",
+            "field_meta": {
+              "type": "freeform",
+              "help": "This is a rich-text content field. Only include 1 paragraph."
+            },
+            "default": {
+              "text": ""
+            }
+          }
+        }
+      },
+      "default": []
+    }
+  }
+}

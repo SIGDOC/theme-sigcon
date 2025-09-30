@@ -1,0 +1,6 @@
+body.wp-editor {
+  // SVGs hovering bugs preview image so we disable hover on them
+  .block-editor-block-icon svg {
+    pointer-events: none !important;
+  }
+}

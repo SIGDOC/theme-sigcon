@@ -1,0 +1,104 @@
+body {
+  font-family: var(--copyFonts);
+  font-size: 16px;
+  font-size: calc(16px + (18 - 16)*(100vw - 80vw)/(1200 - 320));
+  font-size: clamp(16px, 18px, 22px);
+}
+
+p,a,blockquote,cite,ul,ol,li,figcaption {
+  color: var(--primaryColor);
+  font-family: var(--copyFonts);
+}
+
+h1,h2,h3,h4 {
+  font-family: var(--headingFonts);
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--primaryColor);
+}
+
+// Font sizing
+h1 { font-size: clamp(36px, 10vw, 62px) }
+h2 { font-size: clamp(30px, 10vw, 48px); }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.25rem; font-style: italic; }
+figcaption { font-size: 0.9rem; }
+
+// Font spacing
+h3 { margin: 4rem 0 2rem 0 !important; }
+
+// General Font-Weight Classes
+.fw__100 {font-weight: 100;}
+.fw__200 {font-weight: 200;}
+.fw__300 {font-weight: 300;}
+.fw__400 {font-weight: 400;}
+.fw__500 {font-weight: 500;}
+.fw__600 {font-weight: 600;}
+.fw__700 {font-weight: 700;}
+.fw__800 {font-weight: 800;}
+.fw__900 {font-weight: 900;}
+
+// Initial Letter Effect
+.drop_case_first_letter::first-letter {
+  float: left;
+  margin: .15rem .5rem 0 0;
+  padding: 1rem;
+  font-family: var(--headingFonts);
+  font-size: 4rem;
+  color: var(--secondaryColor);
+  line-height: 1;
+  border: 2px solid var(--secondaryColor);
+  border-radius: 8px;
+}
+
+// First-Line Bolded
+.first_line__bolded_uppercase:first-line {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+
+// Link Effect
+.main-content a,
+.main-content-no-subtitle a,
+#intro-card-container .panel.panel__preface a {
+  text-decoration: none;
+  color: var(--primaryColor);
+  background-image: linear-gradient(var(--secondaryShade5), var(--secondaryShade5)), linear-gradient(var(--accentColor), var(--accentColor));
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px, 100% 2px;
+  transition: background-size .16s;
+  position: relative;
+
+  &:hover,&:focus {
+    background-size: 100% 2px, 100% 100%;
+    padding: 5px;
+    transition: background-size .16s;
+  }
+}
+
+.panel a {
+  text-decoration: none;
+  color: inherit;
+  background-image: none;
+  transition: .2s;
+
+  &:hover,&:focus {
+    background-size: unset;
+    padding: inherit;
+    transition: .2s;
+  }
+}
+
+// SPACING
+h2,h3,h4 {
+  margin: 2rem 0 1rem 0;
+}
+p,ul,ol {
+  margin: 2rem 0;
+  line-height: 1.5;
+}
+figcaption {
+  margin-left: 0.25rem;
+}

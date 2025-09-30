@@ -1,0 +1,81 @@
+{
+  "block_meta": {
+    "BLOCK_REGISTER_NAME": "sigcon-workshops-collapsible-filterable",
+    "BLOCK_TITLE": "SIGCON Workshops: Flexible, Collapsible, Filterable",
+    "keywords": ["flexible", "collapsible", "filterable", "cards", "workshops"],
+    "hasSidebar": false,
+    "hasExample": true,
+    "deps": {
+      "css": ["sigcon-cards"],
+      "js": ["jquery-1.7.1.min"]
+    }
+  },
+
+  "attributes": {
+    "cards": {
+      "type": "array",
+      "field_meta": {
+        "type": "repeater",
+        "label": "Create New Workshop Cards",
+        "grid": 2,
+        "subfields": {
+          "workshop_title": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Workshop Title (h3)"
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "facilitators": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "variation":"long",
+              "label": "Facilitator Names (Affiliation)",
+              "help": "Add the facilitator names (affiliation) as a comma-separated list"
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "description": {
+            "type": "object",
+            "field_meta": {
+              "type": "freeform",
+              "label": "Enter the workshop description in this rich-text content field."
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "structure_format": {
+            "type": "object",
+            "field_meta": {
+              "type": "freeform",
+              "label": "Workshop Structure and Format",
+              "help": "Enter the workshop structure and format in this rich-text content field"
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "references": {
+            "type": "object",
+            "field_meta": {
+              "type": "freeform",
+              "label": "References",
+              "help": "Enter the workshop references and format in this rich-text content field"
+            },
+            "default": {
+              "text": ""
+            }
+          }
+        }
+      },
+      "default": []
+    }
+  }
+}

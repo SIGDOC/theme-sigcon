@@ -1,0 +1,32 @@
+{
+  "block_meta": {
+    "BLOCK_REGISTER_NAME": "sigcon-hero-colorful-title",
+    "BLOCK_TITLE": "SIGCON - Animated Logo Hero Banner Title",
+    "keywords": ["hero", "title", "animated", "logo", "sigcon"],
+    "hasSidebar": false,
+    "hasExample": true
+  },
+
+  "attributes": {
+    "main_title_heading": {
+      "type": "object",
+      "field_meta": {
+        "type": "text",
+        "label": "Main Title Heading"
+      },
+      "default": {
+        "text": ""
+      }
+    },
+    "main_title_subheading": {
+      "type": "object",
+      "field_meta": {
+        "type": "text",
+        "label": "Sub-Heading"
+      },
+      "default": {
+        "text": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["video/frontend.scss"],"names":[],"mappings":"AAAA,qBACE,gBAAA,CACA,gBAAA,CACA,iBAAA,CACA,eAAA,CACA,kBAAA","file":"../../video/frontend.min.css","sourcesContent":[".tr-video-outer-wrap {\n  max-width: 1200px;\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 50px;\n  margin-bottom: 50px;\n}\n"]}

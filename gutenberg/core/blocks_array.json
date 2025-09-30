@@ -1,0 +1,16 @@
+{
+  "blocks_array": [
+    "image",
+    "sigcon-landing-cards",
+    "sigcon-landing-cards-flexrow",
+    "sigcon-page-intro-card",
+    "sigcon-section-content",
+    "sigcon-page-card-paragraph-feature",
+    "sigcon-poster-session-cards",
+    "sigcon-cards-flex-thin",
+    "sigcon-cards-left-float-img-and-txt",
+    "sigcon-sponsor-gallery",
+    "sigcon-hero-colorful-title",
+    "sigcon-workshops-collapsible-filterable"
+  ]
+}

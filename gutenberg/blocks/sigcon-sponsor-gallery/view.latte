@@ -1,0 +1,13 @@
+<section class="sponsors_container"
+         role="region"
+         aria-label="Gallery of sponsors for the conference"
+         n:if="!empty($sponsors)">
+  <h2>Sponsors</h2>
+  <div class="masonry__container_sponsors">
+    <div n:foreach="$sponsors as $sponsor" n:ifcontent class="sponsor_item">
+      <a href="{$sponsor['sponsor_link']['text']|noescape}" target="_blank" rel="noopenner noreferrer">
+        {tr_get_media($sponsor['sponsor_logo'], false)}
+      </a>
+    </div>
+  </div>
+</section>

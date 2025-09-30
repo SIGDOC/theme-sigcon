@@ -1,0 +1,58 @@
+  </main>{* #content *}
+  <div class="backdrop"></div>
+  <footer class="footer">
+    <div class="container">
+      <h2><a href="{esc_url( home_url( '/' ) )}">{get_bloginfo('name')}</a></h2>
+
+      <div class="footer__flex_container">
+
+        <div class="footer__contact_container">
+          <h2>Questions?</h2>
+          <h3>About the program or proceedings?</h3>
+          <p>
+            E-mail: <span class="blockspam" aria-hidden="true">BOT, PLEASE GO AWAY!</span> {get_theme_mod('sigcon_program_questions_email_name_text')}@<!-- sdfjsdhfkjypcs -->{get_theme_mod('sigcon_program_questions_email_address_text')}
+          </p>
+          <h3 style="margin-top: 1rem !important;">About conference logistics?</h3>
+          <p>
+            E-mail: <span class="blockspam" aria-hidden="true">BOT, PLEASE GO AWAY!</span> {get_theme_mod('sigcon_conference_questions_email_name_text')}@<!-- sdfjsdhfkjypcs -->{get_theme_mod('sigcon_conference_questions_email_address_text')}
+          </p>
+        </div>
+
+        <div class="footer__committee_container">
+          <h2>Conference Commiteee</h2>
+          <ul>
+            <li>
+              <strong>Conference Chair(s)</strong>: {get_theme_mod('sigcon_conf_chair_text')}
+            </li>
+            <li>
+              <strong>Program Chair(s)</strong>: {get_theme_mod('sigcon_program_chair_text')}
+            </li>
+            <li>
+              <strong>SRC Chair(s)</strong>: {get_theme_mod('sigcon_src_chair_text')}
+            </li>
+            <li>
+              <strong>Sponsorship Chair(s)</strong>: {get_theme_mod('sigcon_sponsorship_chair_text')}
+            </li>
+            <li>
+              <strong>Technical Editor(s)</strong>: {get_theme_mod('sigcon_tech_editor_text')}
+            </li>
+            <li>
+              <strong>Industry Liaison(s)</strong>: {get_theme_mod('sigcon_industry_liaison_text')}
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__copyright_container">
+          <p class="copyright">
+            © <?php echo current_year(); ?> <a href="https://sigdoc.acm.org" target="" rel="noopenner">SIGDOC</a> - All rights reserved
+            <br>
+            Wordpress theme, <em>Theme-SIGCON</em>, created by <a href="https://clndgrn.com" target="_blank" rel="noopenner">Chris Lindgren</a>
+          </p>
+        </div>
+      </div>
+      
+    </div>
+  </footer>
+  {wp_footer()}
+  </body>
+  </html>

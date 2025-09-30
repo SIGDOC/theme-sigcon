@@ -1,0 +1,128 @@
+{
+  "block_meta": {
+    "BLOCK_REGISTER_NAME": "sigcon-landing-cards-flexrow",
+    "BLOCK_TITLE": "SIGDOC Conference Animated FlexRow CTA Cards",
+    "keywords": ["cards", "animated", "flexbox"],
+    "hasSidebar": false,
+    "hasExample": true
+  },
+
+  "attributes": {
+    "preview": true,
+    "panels": {
+      "type": "array",
+      "field_meta": {
+        "type": "repeater",
+        "label": "Create New Section Panels",
+        "grid": 2,
+        "subfields": {
+          "main_heading": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Heading for the Panel"
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "attribution_author": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Author of Image",
+              "help": "Presented below the image in the layout."
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "attribution_license": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Image License",
+              "help": "Presented below the image in the layout."
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "attribution_link": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Link to image (URL)",
+              "help": "Provide full URL to the original image"
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "keyword_1": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "First Keyword for the Panel (1-2 words)",
+              "help": "Presented above the image in the layout.",
+              "max_chars": 15
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "keyword_2": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Second Keyword for the Panel (1-2 words)",
+              "help": "Presented above the image in the layout.",
+              "max_chars": 15
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "keyword_3": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Third Keyword for the Panel (1-2 words)",
+              "help": "Presented above the image in the layout.",
+              "max_chars": 15
+            },
+            "default": {
+              "text": ""
+            }
+          },
+          "main_image": {
+            "type": "object",
+            "field_meta": {
+              "type": "image",
+              "label": "Main Panel Image"
+            },
+            "default": {
+              "src": "",
+              "alt": "",
+              "subtype": "",
+              "id": null
+            }
+          },
+          "panel_cta_link": {
+            "type": "object",
+            "field_meta": {
+              "type": "cta",
+              "label": "Panel CTA Link",
+              "help": "Either a link to a page or a file"
+            },
+            "default": {
+              "url": "",
+              "target": false
+            }
+          }
+        }
+      },
+      "default": []
+    }
+  }
+}
