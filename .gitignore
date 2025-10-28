@@ -1,5 +1,6 @@
 # Project Specific
-sigdoc-schedul*.csv
+prod/block-specific/sigdoc-schedule/sigdoc-schedule.csv
+prod/global/vendor/sigdoc-schedul*.csv
 
 # Logs
 logs
