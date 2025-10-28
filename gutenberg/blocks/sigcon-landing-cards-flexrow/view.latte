@@ -18,7 +18,7 @@
             {tr_get_media($panel['main_image'], false)}
           </a>
         </div>
-        <p n:ifcontent class="p__panel_image_attribution">Image Source: <a n:ifcontent class="a__attribution_link" href="{$panel['attribution_link']['text']|noescape}">{$panel['attribution_author']['text']|noescape}</a>, {$panel['attribution_license']['text']|noescape}</p>
+        <p n:ifcontent class="p__panel_image_attribution">Image Source: <a n:ifcontent class="a__attribution_link" href="{$panel['attribution_link']['text']|noescape}">{$panel['attribution_author']['text']|noescape}</a><span n:ifcontent>, {$panel['attribution_license']['text']|noescape}</span></p>
       </div>
     </article>
     
