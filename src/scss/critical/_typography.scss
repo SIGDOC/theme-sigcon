@@ -12,10 +12,12 @@ p,a,blockquote,cite,ul,ol,li,figcaption {
 
 h1,h2,h3,h4 {
   font-family: var(--headingFonts);
-  text-transform: uppercase;
   font-weight: 600;
   color: var(--primaryColor);
 }
+
+// Font colors
+h2,h3,h4 { color: var(--secondaryShade5) }
 
 // Font sizing
 h1 { font-size: clamp(36px, 10vw, 62px) }
