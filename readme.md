@@ -6,7 +6,10 @@ This repo is for the SIG on the Design of Communication conference.
 
 ### Schedule / Program
 
-<img src="assets/img/docs/sigcon-layout-program-schedule.png" width="250px" />
+<div>
+<img src="assets/img/docs/sigcon-layout-program-schedule-mobile-first.png" width="200px" style="float:right;margin-left:1rem" />
+<img src="assets/img/docs/sigcon-layout-program-schedule.png" width="250px" style="float:right;margin-left:1rem" />
+</div>
 
 Use this layout for the SIGDOC program page.
 
@@ -14,6 +17,7 @@ Use this layout for the SIGDOC program page.
 
 - Programmatic population of schedule via CSV file: [/prod/global/vendor/sigdoc-schedule.csv](/prod/global/vendor/sigdoc-schedule.csv).
 - Schedule filtering via searchbar
+- Mobile-first design
 
 #### WP theme development files
 
