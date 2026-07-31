@@ -1,10 +1,12 @@
 {
   "block_meta": {
+    "apiVersion": 3,
     "BLOCK_REGISTER_NAME": "sigcon-section-content",
     "BLOCK_TITLE": "SIGDOC Conference Page Template",
     "keywords": ["main content", "sections"],
-    "hasSidebar": false,
-    "hasExample": true
+    "hasSidebar": true,
+    "hasExample": true,
+    "editorStyle": "wp-block-freeform-editor"
   },
 
   "attributes": {
@@ -22,11 +24,18 @@
       "type": "object",
       "field_meta": {
         "type": "freeform",
-        "help": "This is a content field for the main content area"
+        "label": "Content (Classic Editor)",
+        "help": "This is a content field for the main content area",
+        "editorStyle": "wp-block-freeform-editor"
       },
       "default": {
         "text": ""
       }
     }
+  },
+
+  "supports": {
+    "html": false,
+    "ariaLabel": true
   }
 }

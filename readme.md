@@ -2,6 +2,10 @@
 
 This repo is for the SIG on the Design of Communication conference.
 
+## ISSUES TO RESOLVE
+
+- **Embedded WP Classic Editors**: Gutenberg's API v3 has broken some of the compatibility with ThemeREdone's embedded Classic Editors. I have narrowed the issue down to `gutenberg/components/block-elements/TrFreeform.js` This template does not provide the new "Edit" button.
+
 ## CUSTOM LAYOUTS
 
 ### Schedule / Program
@@ -19,7 +23,7 @@ Use this layout for the SIGDOC program page.
 - Schedule filtering via searchbar
 - Mobile-first design
 
-#### WP theme development files
+## WP THEME DEVELOPMENT FILES
 
 - **Template**: [views/templates/template-schedule.latte](/views/templates/template-schedule.latte)
 - **Custom Includes**:

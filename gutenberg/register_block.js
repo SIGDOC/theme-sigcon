@@ -32,6 +32,7 @@ const register_block = ({
 
     const block_meta = block_model.block_meta
     let block_attributes = block_model.attributes
+    let block_supports = block_model.supports
 
     const FORMATTED_RAW_ATTRS = { ...block_attributes }
     Object.entries(FORMATTED_RAW_ATTRS).forEach(([key, val]) => {
@@ -126,15 +127,14 @@ const register_block = ({
     registerBlockType(
       `${BLOCK_NAME_PREFIX}/${block_meta.BLOCK_REGISTER_NAME}`,
       {
+        apiVersion: 3,
         title: __(PREFIXED_NAME),
         // description: __(),
         icon,
         category,
         keywords: block_keywords,
         attributes: block_attributes,
-        supports: {
-          html: false
-        },
+        supports: block_supports,
         edit: props => [
           (() => {
             if (block_meta?.hasSidebar) {

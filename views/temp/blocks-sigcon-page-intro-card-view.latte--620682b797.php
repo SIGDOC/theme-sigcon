@@ -11,8 +11,8 @@ final class Template620682b797 extends Latte\Runtime\Template
 		extract($ʟ_args);
 		unset($ʟ_args);
 
-		echo '<div id="intro-card-container">
-  <section role="region" 
+		echo '<div id="intro-card-container" class="main_child_ignore">
+  <section role="region"
         aria-label="';
 		echo $aria_label['text'] /* line 3 */;
 		echo '">
@@ -68,7 +68,7 @@ final class Template620682b797 extends Latte\Runtime\Template
 						ob_start(fn() => '');
 						try {
 							echo '            <li
-                 class="" 
+                 class=""
                  role="region">';
 							ob_start();
 							try {
@@ -103,7 +103,7 @@ final class Template620682b797 extends Latte\Runtime\Template
 					echo '          </ul>
 ';
 				}
-				echo '          
+				echo '
         </div><!--/inner-->
       </div><!--/thumb-->
     ';
@@ -120,7 +120,7 @@ final class Template620682b797 extends Latte\Runtime\Template
 			}
 		}
 		echo '<!--/panel-->
-    
+
   </section>
 </div>
 ';

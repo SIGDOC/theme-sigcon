@@ -1,5 +1,6 @@
 {
   "block_meta": {
+    "apiVersion": 3,
     "BLOCK_REGISTER_NAME": "name-same-as-folder-name-here",
     "BLOCK_TITLE": "block name same as folder name here",
     "keywords": ["blocktag1", "blocktag2"],
@@ -108,5 +109,9 @@
         "value": "#f00"
       }
     }
+  },
+
+  "supports": {
+    "html": false
   }
 }

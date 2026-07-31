@@ -1,15 +1,15 @@
 <!-- START NEW CARD SECTION -->
 <section n:if="!empty($cards)"
-         class="sigcon-relative card__sections floating_cards"
+         class="sigcon-relative card__sections floating_cards main_child_ignore"
          role="region"
          aria-labelledby="{$section_id['text']|noescape}">
 
   <div class="cards__main_external_wrapper card__regular_wrapped_flex">
-    
+
     <h2 n:ifcontent id="{$section_id['text']|noescape}">{$section_h2['text']}</h2>
-    
+
     <div class="cards__sub_container">
-    
+
       <!-- Start Card Loop -->
       <div class="float_left_card__inner_wrapper"
             n:foreach="$cards as $card"

@@ -1,4 +1,4 @@
-<div id="landing-cards-wrap">
+<div id="landing-cards-wrap" class="main_child_ignore">
   <section class="landing-cards-flex-container"
         role="region"
         aria-label="Action items for the conference"
@@ -21,7 +21,7 @@
         </div>
       </div>
     </article>
-    
+
   </section>
 </div>
 
@@ -33,27 +33,27 @@
     body #wrap .panel {
       --progress: 0.5; /*defaults to 0*/
     }
-    
+
     body #wrap .panel,
     body #wrap .panel::before {
       opacity: 1 /*defaults to 0*/
     }
-    
+
     body #wrap .panel > a h2 {
       color: var(--primaryColor); /*defaults to transparent*/
       pointer-events: unset;
       transform: translateY(calc(100px - (var(--progress) * 200px)));
     }
-    
+
     body #wrap .panel .thumb p {
       font-size: 18px;
     }
-    
+
     body #loader,
     body #loader .wrap {
       display: none;
     }
-    
+
     body #social svg {
       transform: translateY(0); /*defaults to -150px*/
     }

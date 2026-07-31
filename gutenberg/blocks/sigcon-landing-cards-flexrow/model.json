@@ -1,5 +1,6 @@
 {
   "block_meta": {
+    "apiVersion": 3,
     "BLOCK_REGISTER_NAME": "sigcon-landing-cards-flexrow",
     "BLOCK_TITLE": "SIGDOC Conference Animated FlexRow CTA Cards",
     "keywords": ["cards", "animated", "flexbox"],
@@ -124,5 +125,9 @@
       },
       "default": []
     }
+  },
+
+  "supports": {
+    "html": false
   }
 }

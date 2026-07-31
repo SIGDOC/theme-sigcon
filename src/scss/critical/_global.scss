@@ -99,6 +99,37 @@ table {
   }
 }
 
+// Classic Editor Component Fix for API v3
+/**
+  An embedded Classic Editor will not currently enable
+  the Edit button readily available
+*/
+main {
+
+  & > *:not(.main_child_ignore) {
+    position: relative;
+    max-width: 740px;
+  }
+
+  & > h2 {
+    font-size: clamp(1.5rem,8vw,2.75rem);
+    margin: 1rem auto .5rem auto;
+  }
+  & > h3 {
+    margin: 2rem auto 1rem auto;
+  }
+  & > h4 {
+    margin: 1.25rem auto 1rem auto;
+  }
+  & > p, a, blockquote, cite, ul, ol, dl, figcaption, figure, img, table {
+    margin: 2rem auto;
+  }
+  & > img {
+    display: block;
+    width: 100%;
+  }
+}
+
 // Keynotes
 .keynote_image {
   float: left !important;

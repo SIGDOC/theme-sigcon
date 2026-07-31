@@ -1,5 +1,5 @@
-<div id="intro-card-container">
-  <section role="region" 
+<div id="intro-card-container" class="main_child_ignore">
+  <section role="region"
         aria-label="{$aria_label['text']|noescape}">
 
     <div n:ifcontent class="panel panel__preface">
@@ -14,17 +14,17 @@
           </h2>
           <!-- Start list of conference committee -->
           <ul n:if="!empty($roles)">
-            <li n:foreach="$roles as $role" 
+            <li n:foreach="$roles as $role"
                  n:ifcontent
-                 class="" 
+                 class=""
                  role="region">
               <strong>{$role['title']['text']|noescape}</strong>: {$role['name']['text']|noescape}, {$role['affiliation']['text']|noescape}, {$role['country']['text']|noescape}
             </li>
           </ul>
-          
+
         </div><!--/inner-->
       </div><!--/thumb-->
     </div><!--/panel-->
-    
+
   </section>
 </div>

@@ -11,7 +11,7 @@ final class Template9e1629c10c extends Latte\Runtime\Template
 		extract($ʟ_args);
 		unset($ʟ_args);
 
-		echo '<section class="article-wrap">
+		echo '<section class="article-wrap main_child_ignore">
   <article class="article">
 ';
 		ob_start(fn() => '');
@@ -38,8 +38,7 @@ final class Template9e1629c10c extends Latte\Runtime\Template
 				echo ob_get_clean();
 			}
 		}
-		echo '    
-';
+		echo "\n";
 		ob_start(fn() => '');
 		try {
 			echo '    <div class="article__description">';
