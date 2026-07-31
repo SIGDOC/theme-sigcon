@@ -15,14 +15,14 @@ final class Template1a2869d8c9 extends Latte\Runtime\Template
 ';
 		if (!empty($cards)) /* line 2 */ {
 			echo '<section
-         class="sigcon-relative card__sections floating_cards"
+         class="sigcon-relative card__sections floating_cards main_child_ignore"
          role="region"
          aria-labelledby="';
 			echo $section_id['text'] /* line 5 */;
 			echo '">
 
   <div class="cards__main_external_wrapper card__regular_wrapped_flex">
-    
+
 ';
 			ob_start(fn() => '');
 			try {
@@ -46,9 +46,9 @@ final class Template1a2869d8c9 extends Latte\Runtime\Template
 					echo ob_get_clean();
 				}
 			}
-			echo '    
+			echo '
     <div class="cards__sub_container">
-    
+
       <!-- Start Card Loop -->
 ';
 			foreach ($cards as $card) /* line 15 */ {

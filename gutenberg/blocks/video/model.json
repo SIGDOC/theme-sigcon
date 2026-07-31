@@ -1,5 +1,6 @@
 {
   "block_meta": {
+    "apiVersion": 3,
     "BLOCK_REGISTER_NAME": "video",
     "BLOCK_TITLE": "Video",
     "keywords": ["video", "youtube"],
@@ -55,5 +56,9 @@
         "checked": false
       }
     }
+  },
+
+  "supports": {
+    "html": false
   }
 }

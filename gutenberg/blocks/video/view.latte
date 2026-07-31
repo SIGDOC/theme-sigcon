@@ -13,11 +13,11 @@
 
 
 <figure
-	n:if="$video_src" 
-	class="wp-figure tr-video-outer-wrap"
+	n:if="$video_src"
+	class="wp-figure tr-video-outer-wrap main_child_ignore"
 >
-	{include tr_part('video'), 
-		video_src: $video_src, 
+	{include tr_part('video'),
+		video_src: $video_src,
 		video_type: tr_get_video_type_and_id($video_src)
 	}
 

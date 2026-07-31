@@ -1,11 +1,13 @@
 {
   "block_meta": {
+    "apiVersion": 3,
     "BLOCK_REGISTER_NAME": "repeater-fields-grid",
     "BLOCK_TITLE": "Repeater Fields Grid",
     "keywords": ["blocktag1", "blocktag2"],
     "hasSidebar": false,
     "hasExample": true
   },
+
   "attributes": {
     "breadcrumbs": {
       "type": "array",
@@ -141,5 +143,9 @@
       },
       "default": []
     }
+  },
+
+  "supports": {
+    "html": false
   }
 }

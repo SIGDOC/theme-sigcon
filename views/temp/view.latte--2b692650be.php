@@ -15,7 +15,7 @@ final class Template2b692650be extends Latte\Runtime\Template
 			echo '<section
          role="region"
          data-role="page" id="page"
-         class="sigcon-relative card__sections">
+         class="sigcon-relative card__sections main_child_ignore">
 
   <div data-role="content" class="cards__main_external_wrapper card__regular_wrapped_flex">
 

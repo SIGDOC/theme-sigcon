@@ -1,16 +1,16 @@
 <!-- START FLEX CARD SECTION -->
-<section n:if="!empty($cards)" 
+<section n:if="!empty($cards)"
          role="region"
          aria-labelledby="{$section_id['text']}"
-         class="sigcon-relative card__sections">
-  
+         class="sigcon-relative card__sections main_child_ignore">
+
   <!-- Start Flex Thin Cards -->
   <div class="cards__main_external_wrapper card__regular_wrapped_flex">
 
     <h2 id="{$section_id['text']}">{$section_h2['text']}</h2>
 
     <div class="cards__sub_container">
-    
+
       <!-- Start Card Loop -->
       <div class="card__inner_wrapper"
             n:foreach="$cards as $card"

@@ -1,5 +1,6 @@
 {
   "block_meta": {
+    "apiVersion": 3,
     "BLOCK_REGISTER_NAME": "sigcon-page-card-paragraph-feature",
     "BLOCK_TITLE": "SIGDOC Feature Card with Custom Text Effects",
     "keywords": ["cards", "preface", "introductory", "text effects"],
@@ -72,5 +73,9 @@
       },
       "default": []
     }
+  },
+
+  "supports": {
+    "html": false
   }
 }

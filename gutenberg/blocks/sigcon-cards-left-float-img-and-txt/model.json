@@ -1,5 +1,6 @@
 {
   "block_meta": {
+    "apiVersion": 3,
     "BLOCK_REGISTER_NAME": "sigcon-cards-left-float-img-and-txt",
     "BLOCK_TITLE": "SIGCON Flexible Cards with Left-Aligned Floated Image and Text",
     "keywords": ["cards", "image and text", "flexible"],
@@ -98,5 +99,9 @@
       },
       "default": []
     }
+  },
+
+  "supports": {
+    "html": false
   }
 }

@@ -1,4 +1,4 @@
-<div id="landing-cards-wrap">
+<div id="landing-cards-wrap" class="main_child_ignore">
   <section class="landing-cards-grid-3-col-container"
         role="region"
         aria-label="Action items for the conference"
@@ -21,7 +21,7 @@
         <p n:ifcontent class="p__panel_image_attribution">Image Source: <a n:ifcontent class="a__attribution_link" href="{$panel['attribution_link']['text']|noescape}">{$panel['attribution_author']['text']|noescape}</a><span n:ifcontent>, {$panel['attribution_license']['text']|noescape}</span></p>
       </div>
     </article>
-    
+
   </section>
 </div>
 
@@ -33,18 +33,18 @@
     body #wrap .panel {
       --progress: 0.5; /*defaults to 0*/
     }
-    
+
     body #wrap .panel,
     body #wrap .panel::before {
       opacity: 1 /*defaults to 0*/
     }
-    
+
     {* body #wrap .panel > a h2 {
       color: var(--primaryColor); /*defaults to transparent*/
       pointer-events: unset;
       transform: translateY(calc(100px - (var(--progress) * 200px)));
     } *}
-    
+
     body #loader,
     body #loader .wrap {
       display: none;

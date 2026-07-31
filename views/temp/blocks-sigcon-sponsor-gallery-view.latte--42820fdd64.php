@@ -12,7 +12,7 @@ final class Template42820fdd64 extends Latte\Runtime\Template
 		unset($ʟ_args);
 
 		if (!empty($sponsors)) /* line 4 */ {
-			echo '<section class="sponsors_container"
+			echo '<section class="sponsors_container main_child_ignore"
          role="region"
          aria-label="Gallery of sponsors for the conference">
   <h2>Sponsors</h2>
