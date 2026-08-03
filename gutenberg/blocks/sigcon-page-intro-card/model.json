@@ -20,73 +20,55 @@
         "text": ""
       }
     },
-    "main_heading": {
-      "type": "object",
-      "field_meta": {
-        "type": "text",
-        "label": "Heading for the Introductory Panel"
-      },
-      "default": {
-        "text": ""
-      }
-    },
     "main_content": {
-      "type": "object",
-      "field_meta": {
-        "type": "freeform",
-        "help": "This is a rich-text content field for the content before the committee list. Keep it brief."
-      },
-      "default": {
-        "text": ""
-      }
-    },
-    "roles": {
       "type": "array",
       "field_meta": {
         "type": "repeater",
-        "label": "Create New Conference Committee Role",
+        "label": "Create Paragraphs",
         "grid": 2,
         "subfields": {
-          "title": {
+          "main_paragraph": {
             "type": "object",
             "field_meta": {
               "type": "text",
-              "label": "Committee Title"
+              "variation": "long",
+              "help": "This is a long text field wrapped in a single paragraph element. It populates the intro content before the Quick Links below it. Keep it brief.",
+              "label": "Text wrapped in single paragraph element"
+            },
+            "default": {
+              "text": "Add introductory text here."
+            }
+          }
+        }
+      },
+      "default": []
+    },
+    "quick_links": {
+      "type": "array",
+      "field_meta": {
+        "type": "repeater",
+        "label": "Create Quick Links",
+        "grid": 2,
+        "subfields": {
+          "link_text": {
+            "type": "object",
+            "field_meta": {
+              "type": "text",
+              "label": "Link Text"
             },
             "default": {
               "text": ""
             }
           },
-          "name": {
+          "quick_link": {
             "type": "object",
             "field_meta": {
               "type": "text",
-              "label": "Committee Member Name"
+              "label": "Link to page (URL)",
+              "help": "Provide full URL to the page."
             },
             "default": {
-              "text": ""
-            }
-          },
-          "affiliation": {
-            "type": "object",
-            "field_meta": {
-              "type": "text",
-              "label": "Committee Member Affiliation",
-              "help":"Enter university, company, or organization"
-            },
-            "default": {
-              "text": ""
-            }
-          },
-          "country": {
-            "type": "object",
-            "field_meta": {
-              "type": "text",
-              "label": "Committee Member Country",
-              "help": "United States, Ghana, Mexico, etc."
-            },
-            "default": {
-              "text": ""
+              "text": "https://..."
             }
           }
         }
