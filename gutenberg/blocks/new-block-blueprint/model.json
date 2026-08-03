@@ -39,16 +39,6 @@
         "text": ""
       }
     },
-    "example_richtext": {
-      "type": "object",
-      "field_meta": {
-        "type": "freeform",
-        "help": "This is a content field"
-      },
-      "default": {
-        "text": ""
-      }
-    },
     "example_cta": {
       "type": "object",
       "field_meta": {

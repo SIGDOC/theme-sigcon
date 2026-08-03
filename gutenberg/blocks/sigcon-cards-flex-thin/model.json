@@ -86,8 +86,10 @@
           "para_copy": {
             "type": "object",
             "field_meta": {
-              "type": "freeform",
-              "help": "This is a rich-text content field. Only include 1 paragraph."
+              "type": "text",
+              "variation": "long",
+              "label": "Enter only 1 paragraph of content. Content is wrapped in a paragraph element",
+              "help": "Only include 1 paragraph."
             },
             "default": {
               "text": ""
