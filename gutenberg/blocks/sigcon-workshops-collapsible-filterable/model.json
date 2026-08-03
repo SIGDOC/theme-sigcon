@@ -36,7 +36,7 @@
               "type": "text",
               "variation":"long",
               "label": "Facilitator Names (Affiliation)",
-              "help": "Add the facilitator names (affiliation) as a comma-separated list"
+              "help": "Add the facilitator names (affiliation) as a comma-separated list. Content is wrapped in paragraph element."
             },
             "default": {
               "text": ""
@@ -45,8 +45,9 @@
           "description": {
             "type": "object",
             "field_meta": {
-              "type": "freeform",
-              "label": "Enter the workshop description in this rich-text content field."
+              "type": "text",
+              "variation": "long",
+              "label": "Enter the workshop description. Content is wrapped in paragraph element."
             },
             "default": {
               "text": ""
@@ -55,20 +56,10 @@
           "structure_format": {
             "type": "object",
             "field_meta": {
-              "type": "freeform",
-              "label": "Workshop Structure and Format",
-              "help": "Enter the workshop structure and format in this rich-text content field"
-            },
-            "default": {
-              "text": ""
-            }
-          },
-          "references": {
-            "type": "object",
-            "field_meta": {
-              "type": "freeform",
-              "label": "References",
-              "help": "Enter the workshop references and format in this rich-text content field"
+              "type": "text",
+              "variation": "long",
+              "label": "Enter Workshop Structure and Format. Content is wrapped in paragraph element.",
+              "help": "Enter the workshop structure and format."
             },
             "default": {
               "text": ""

@@ -66,55 +66,7 @@ final class Template2b692650be extends Latte\Runtime\Template
 						echo $card['structure_format']['text'] /* line 41 */;
 						echo '
 
-';
-						ob_start(fn() => '');
-						try {
-							echo '            <div>';
-							ob_start();
-							try {
-								echo '
-              <h3>References</h3>
-';
-								ob_start(fn() => '');
-								try {
-									echo '              <div>';
-									ob_start();
-									try {
-										echo '
-                ';
-										echo $card['references']['text'] /* line 46 */;
-										echo '
-              ';
-
-									} finally {
-										$ʟ_ifc[2] = rtrim(ob_get_flush()) === '';
-									}
-									echo '</div>
-';
-
-								} finally {
-									if ($ʟ_ifc[2] ?? null) {
-										ob_end_clean();
-									} else {
-										echo ob_get_clean();
-									}
-								}
-								echo '            ';
-
-							} finally {
-								$ʟ_ifc[1] = rtrim(ob_get_flush()) === '';
-							}
-							echo '</div>
-';
-
-						} finally {
-							if ($ʟ_ifc[1] ?? null) {
-								ob_end_clean();
-							} else {
-								echo ob_get_clean();
-							}
-						}
-						echo '          </div>
+          </div>
         </article>
 
       ';
