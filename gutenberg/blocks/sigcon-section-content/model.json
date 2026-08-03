@@ -5,8 +5,7 @@
     "BLOCK_TITLE": "SIGDOC Conference Page Template",
     "keywords": ["main content", "sections"],
     "hasSidebar": true,
-    "hasExample": true,
-    "editorStyle": "wp-block-freeform-editor"
+    "hasExample": true
   },
 
   "attributes": {
@@ -24,7 +23,7 @@
       "type": "object",
       "field_meta": {
         "type": "freeform",
-        "label": "Content (Classic Editor)",
+        "label": "Enter Section Content with the (Classic Editor). WARNING! You will need to update this section upon each content update, due to Gutenberg APIv3 iframe issues.",
         "help": "This is a content field for the main content area",
         "editorStyle": "wp-block-freeform-editor"
       },

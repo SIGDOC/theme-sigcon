@@ -88,8 +88,9 @@
           "paragraph": {
             "type": "object",
             "field_meta": {
-              "type": "freeform",
-              "help": "This is a rich-text content field for the card. Only include 1 paragraph."
+              "type": "text",
+              "variation": "long",
+              "label": "Enter content for the card. It will be wrapped in 1 paragraph element."
             },
             "default": {
               "text": ""
