@@ -71,15 +71,22 @@ loadScriptsInOrder(resourceList)
   logoScriptEle.src = tr_theme_url + "/prod/global/logo.js"
   document.body.appendChild(logoScriptEle)
 
-  const landingScriptEle = document.createElement("script")
-  landingScriptEle.type = "text/javascript"
-  landingScriptEle.src = tr_theme_url + "/prod/global/landing-cards.js"
-  document.body.appendChild(landingScriptEle)
+  // IF LANDING CARD PANELS
+  if (document.getElementById("landing-cards-wrap")) {
+    const landingScriptEle = document.createElement("script")
+    landingScriptEle.type = "text/javascript"
+    landingScriptEle.src = tr_theme_url + "/prod/global/landing-cards.js"
+    document.body.appendChild(landingScriptEle)
+  }
 
-  const scheduleScriptEle = document.createElement("script")
-  scheduleScriptEle.type = "text/javascript"
-  scheduleScriptEle.src = schedulePath
-  document.body.appendChild(scheduleScriptEle)
+  // IF SCHEDULE PAGE
+  if (document.getElementById("sigdoc_schedule_page")) {
+    const scheduleScriptEle = document.createElement("script")
+    scheduleScriptEle.type = "text/javascript"
+    scheduleScriptEle.src = schedulePath
+    document.body.appendChild(scheduleScriptEle)
+  }
+
 })
 .catch( err => {
 

@@ -106,7 +106,7 @@ table {
 */
 main {
 
-  & > *:not(.main_child_ignore,div.content) {
+  & > *:not(.main_child_ignore,div.content,.schedule__container) {
     position: relative;
     max-width: 740px;
   }

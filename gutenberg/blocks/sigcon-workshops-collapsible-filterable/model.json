@@ -46,8 +46,8 @@
             "type": "object",
             "field_meta": {
               "type": "text",
-              "variation": "long",
-              "label": "Enter the workshop description. Content is wrapped in paragraph element."
+              "variation":"long",
+              "label": "Enter the workshop description. Contained by single paragraph element."
             },
             "default": {
               "text": ""
@@ -57,8 +57,8 @@
             "type": "object",
             "field_meta": {
               "type": "text",
-              "variation": "long",
-              "label": "Enter Workshop Structure and Format. Content is wrapped in paragraph element.",
+              "variation":"long",
+              "label": "Enter Workshop Structure and Format. Contained by single paragraph element.",
               "help": "Enter the workshop structure and format."
             },
             "default": {

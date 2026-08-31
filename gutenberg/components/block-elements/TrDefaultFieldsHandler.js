@@ -5,9 +5,13 @@ import TrField from './TrField'
 const two_cols_variations = ['2', '2-1', '1-2']
 
 const TrDefaultFieldsHandler = (props) => {
+
+  // @props passed from block's EditMain.js
+  // Parse out the object's properties
   let { data } = props
   const { trRawAttrs, attributes, setAttributes } = data
 
+  // If it is a grid layout or not
   const grid = data.hasOwnProperty('grid') ? data.grid : null
 
   let columns = null

@@ -18,6 +18,7 @@ const RenderRepeaterSubField = ({
   fieldIndex,
   subField
 }) => {
+
   const subFieldType = subField.field_meta.type
 
   if (subFieldType !== 'repeater') {
@@ -247,6 +248,7 @@ const TrRepeater = ({
   }
 
   const getSubFieldsHTML = (field, fieldIndex) => {
+
     let subFieldsHTML = <Fragment></Fragment>
     if (!fields_grid) {
       subFieldsHTML = (
@@ -272,14 +274,9 @@ const TrRepeater = ({
       // TODO: Maybe use useCallback or useMemo to improve performance
       const allFields = Object.keys(subfields)
 
-      console.log('allFields: ', allFields)
-      console.log('subFields: ', subfields)
-
       const defaultFieldObjects = allFields.filter(
         objName => !subfields[objName].field_meta.hasOwnProperty('col')
       )
-
-      console.log('defaultFieldObjects: ', defaultFieldObjects)
 
       const colFieldObjects = colVar =>
         Object.keys(subfields).filter(
@@ -289,7 +286,6 @@ const TrRepeater = ({
       subFieldsHTML = (
         <Fragment>
           {defaultFieldObjects.map((objectName, index) => {
-            console.log('IN_MAP_OBJECT_NAME: ', objectName)
             const subField = subfields[objectName]
 
             return (

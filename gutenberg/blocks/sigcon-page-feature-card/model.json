@@ -1,9 +1,9 @@
 {
   "block_meta": {
     "apiVersion": 3,
-    "BLOCK_REGISTER_NAME": "sigcon-page-intro-card",
-    "BLOCK_TITLE": "DEPRECATED! Use SIGDOC Feature Card instead! - SIGDOC Conference Introductory Card for a Page",
-    "keywords": ["cards", "preface", "introductory"],
+    "BLOCK_REGISTER_NAME": "sigcon-page-feature-card",
+    "BLOCK_TITLE": "SIGDOC Feature Card",
+    "keywords": ["cards", "preface", "introductory", "feature"],
     "hasSidebar": false,
     "hasExample": true
   },
@@ -13,7 +13,7 @@
       "type": "object",
       "field_meta": {
         "type": "text",
-        "label": "ARIA Label for the Introductory Panel Content Area",
+        "label": "ARIA Label for the Feature Panel Content Area",
         "help": " This is important for accessibility. Provide a short description of this section's topic."
       },
       "default": {

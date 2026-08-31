@@ -14,7 +14,7 @@ final class Template806bd4c705 extends Latte\Runtime\Template
 		echo '<!doctype html>
 <html ';
 		echo language_attributes() /* line 2 */;
-		echo '>
+		echo ' id="sigdoc_schedule_page">
 
 <head>
 	<meta charset="';

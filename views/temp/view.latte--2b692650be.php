@@ -57,14 +57,14 @@ final class Template2b692650be extends Latte\Runtime\Template
 						echo '</p>
 
             <h3>Description</h3>
-            ';
+            <p>';
 						echo $card['description']['text'] /* line 38 */;
-						echo '
+						echo '</p>
 
             <h3>Structure/Format</h3>
-            ';
+            <p>';
 						echo $card['structure_format']['text'] /* line 41 */;
-						echo '
+						echo '</p>
 
           </div>
         </article>

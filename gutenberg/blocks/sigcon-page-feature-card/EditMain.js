@@ -1,7 +1,6 @@
 import TrDefaultFieldsHandler from '../../components/block-elements/TrDefaultFieldsHandler'
 
 const EditMain = (props) => {
-
   const { className } = props
 
   return (

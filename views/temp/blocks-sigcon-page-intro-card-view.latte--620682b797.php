@@ -27,79 +27,37 @@ final class Template620682b797 extends Latte\Runtime\Template
       <div class="thumb">
         <div class="inner">
 
-          <!-- Start Paragraphs -->
+          <!-- Start Content -->
 ';
 				if (!empty($main_content)) /* line 10 */ {
 					echo '          <div
                class="drop_case_second_paragraph_letter__container">
-';
-					foreach ($main_content as $mc) /* line 12 */ {
-						ob_start(fn() => '');
-						try {
-							echo '            <div
-                class=""
-                role="region">';
-							ob_start();
-							try {
-								echo '
-              <p>
-                ';
-								echo $mc['main_paragraph']['text'] /* line 17 */;
-								echo '
-              </p>
             ';
-
-							} finally {
-								$ʟ_ifc[1] = rtrim(ob_get_flush()) === '';
-							}
-							echo '</div>
-';
-
-						} finally {
-							if ($ʟ_ifc[1] ?? null) {
-								ob_end_clean();
-							} else {
-								echo ob_get_clean();
-							}
-						}
-
-					}
-
-					echo '          </div>
+					echo $main_content['text'] /* line 12 */;
+					echo '
+          </div>
 ';
 				}
-				echo '          <!--/End Paragraphs-->
+				echo '          <!--/End Content-->
 
 ';
-				ob_start(fn() => '');
-				try {
-					echo '          <h2 aria-label="Quick Links" data-splitting="words">';
-					ob_start();
-					try {
-						echo '
-            Quick Links
-          ';
-
-					} finally {
-						$ʟ_ifc[2] = rtrim(ob_get_flush()) === '';
-					}
-					echo '</h2>
+				if (!empty($links_heading)) /* line 16 */ {
+					echo '          <h2
+              aria-label="Quick Links"
+              data-splitting="words">
+            ';
+					echo $links_heading['text'] /* line 19 */;
+					echo '
+          </h2>
 ';
-
-				} finally {
-					if ($ʟ_ifc[2] ?? null) {
-						ob_end_clean();
-					} else {
-						echo ob_get_clean();
-					}
 				}
 				echo '
           <!-- Start Quick List -->
 ';
-				if (!empty($quick_links)) /* line 28 */ {
+				if (!empty($quick_links)) /* line 23 */ {
 					echo '          <ul>
 ';
-					foreach ($quick_links as $ql) /* line 29 */ {
+					foreach ($quick_links as $ql) /* line 24 */ {
 						ob_start(fn() => '');
 						try {
 							echo '            <li
@@ -109,20 +67,20 @@ final class Template620682b797 extends Latte\Runtime\Template
 							try {
 								echo '
               <a href="';
-								echo LR\Filters::safeUrl($ql['quick_link']['text']) /* line 33 */;
+								echo LR\Filters::safeUrl($ql['quick_link']['text']) /* line 28 */;
 								echo '">';
-								echo $ql['link_text']['text'] /* line 33 */;
+								echo $ql['link_text']['text'] /* line 28 */;
 								echo '</a>
             ';
 
 							} finally {
-								$ʟ_ifc[3] = rtrim(ob_get_flush()) === '';
+								$ʟ_ifc[1] = rtrim(ob_get_flush()) === '';
 							}
 							echo '</li>
 ';
 
 						} finally {
-							if ($ʟ_ifc[3] ?? null) {
+							if ($ʟ_ifc[1] ?? null) {
 								ob_end_clean();
 							} else {
 								echo ob_get_clean();
@@ -164,7 +122,7 @@ final class Template620682b797 extends Latte\Runtime\Template
 		extract($this->params);
 
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === 'extends') {
-			foreach (array_intersect_key(['mc' => '12', 'ql' => '29'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['ql' => '24'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}

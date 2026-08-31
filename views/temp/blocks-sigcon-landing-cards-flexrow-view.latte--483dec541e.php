@@ -11,15 +11,16 @@ final class Template483dec541e extends Latte\Runtime\Template
 		extract($ʟ_args);
 		unset($ʟ_args);
 
-		echo '<div id="landing-cards-wrap main_child_ignore">
+		echo '<div id="landing-cards-wrap"
+     class="main_child_ignore">
 ';
-		if (!empty($panels)) /* line 5 */ {
+		if (!empty($panels)) /* line 6 */ {
 			echo '  <section class="landing-cards-grid-3-col-container"
         role="region"
         aria-label="Action items for the conference">
 
 ';
-			foreach ($panels as $panel) /* line 7 */ {
+			foreach ($panels as $panel) /* line 8 */ {
 				ob_start(fn() => '');
 				try {
 					echo '    <article
@@ -28,19 +29,19 @@ final class Template483dec541e extends Latte\Runtime\Template
 					try {
 						echo '
       <a href="';
-						echo LR\Filters::safeUrl($panel['panel_cta_link']['url']) /* line 10 */;
+						echo LR\Filters::safeUrl($panel['panel_cta_link']['url']) /* line 11 */;
 						echo '">
 ';
 						ob_start(fn() => '');
 						try {
 							echo '        <h2 aria-label="';
-							echo $panel['main_heading']['text'] /* line 11 */;
+							echo $panel['main_heading']['text'] /* line 12 */;
 							echo '" data-splitting="words">';
 							ob_start();
 							try {
 								echo '
           ';
-								echo $panel['main_heading']['text'] /* line 12 */;
+								echo $panel['main_heading']['text'] /* line 13 */;
 								echo '
         ';
 
@@ -64,13 +65,13 @@ final class Template483dec541e extends Latte\Runtime\Template
 						ob_start(fn() => '');
 						try {
 							echo '          <a class="thumb-link" href="';
-							echo LR\Filters::safeUrl($panel['panel_cta_link']['url']) /* line 17 */;
+							echo LR\Filters::safeUrl($panel['panel_cta_link']['url']) /* line 18 */;
 							echo '">';
 							ob_start();
 							try {
 								echo '
             ';
-								echo LR\Filters::escapeHtmlText(tr_get_media($panel['main_image'], false)) /* line 18 */;
+								echo LR\Filters::escapeHtmlText(tr_get_media($panel['main_image'], false)) /* line 19 */;
 								echo '
           ';
 
@@ -98,11 +99,11 @@ final class Template483dec541e extends Latte\Runtime\Template
 								ob_start(fn() => '');
 								try {
 									echo '<a class="a__attribution_link" href="';
-									echo LR\Filters::safeUrl($panel['attribution_link']['text']) /* line 21 */;
+									echo LR\Filters::safeUrl($panel['attribution_link']['text']) /* line 22 */;
 									echo '">';
 									ob_start();
 									try {
-										echo $panel['attribution_author']['text'] /* line 21 */;
+										echo $panel['attribution_author']['text'] /* line 22 */;
 
 									} finally {
 										$ʟ_ifc[4] = rtrim(ob_get_flush()) === '';
@@ -121,7 +122,7 @@ final class Template483dec541e extends Latte\Runtime\Template
 									ob_start();
 									try {
 										echo ', ';
-										echo $panel['attribution_license']['text'] /* line 21 */;
+										echo $panel['attribution_license']['text'] /* line 22 */;
 
 									} finally {
 										$ʟ_ifc[5] = rtrim(ob_get_flush()) === '';
@@ -201,7 +202,7 @@ final class Template483dec541e extends Latte\Runtime\Template
 		extract($this->params);
 
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === 'extends') {
-			foreach (array_intersect_key(['panel' => '7'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['panel' => '8'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
