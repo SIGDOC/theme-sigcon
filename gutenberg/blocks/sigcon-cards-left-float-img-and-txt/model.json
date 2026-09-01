@@ -2,12 +2,12 @@
   "block_meta": {
     "apiVersion": 3,
     "BLOCK_REGISTER_NAME": "sigcon-cards-left-float-img-and-txt",
-    "BLOCK_TITLE": "SIGCON Flexible Cards with Left-Aligned Floated Image and Text",
+    "BLOCK_TITLE": "SIGDOC Flex Cards with Left-Aligned Floated Image and Text",
     "keywords": ["cards", "image and text", "flexible"],
     "hasSidebar": false,
     "hasExample": true,
     "deps": {
-      "css": ["sigcon-cards"]
+      "css": ["sigcon-cards", "flexible cards"]
     }
   },
 
@@ -17,7 +17,7 @@
       "field_meta": {
         "type": "text",
         "label": "Section ID",
-        "help":"Add an ID to the section for inbound navigation purposes. It must be unique from all other elements on the page. Hyphenate between words, so do NOT use spaces, e.g., #section-id-inbound-link"
+        "help": "Add an ID to the section for inbound navigation purposes. It must be unique from all other elements on the page. Hyphenate between words, so do NOT use spaces, e.g., #section-id-inbound-link"
       },
       "default": {
         "text": ""

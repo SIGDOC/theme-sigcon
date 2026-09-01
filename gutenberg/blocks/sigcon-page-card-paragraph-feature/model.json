@@ -2,7 +2,7 @@
   "block_meta": {
     "apiVersion": 3,
     "BLOCK_REGISTER_NAME": "sigcon-page-card-paragraph-feature",
-    "BLOCK_TITLE": "SIGDOC Feature Card with Custom Text Effects",
+    "BLOCK_TITLE": "SIGDOC Drop-Capped Feature Card",
     "keywords": ["cards", "preface", "introductory", "text effects"],
     "hasSidebar": false,
     "hasExample": true
@@ -14,7 +14,7 @@
       "field_meta": {
         "type": "text",
         "label": "ARIA Label for the Introductory Panel Content Area",
-        "help":" This is important for accessibility. Provide a short description of this section's topic."
+        "help": "For accessibility, write a short description of this section's topic."
       },
       "default": {
         "text": ""
@@ -41,7 +41,7 @@
             "type": "object",
             "field_meta": {
               "type": "text",
-              "variation":"long",
+              "variation": "long",
               "label": "Content for Element"
             },
             "default": {
@@ -54,13 +54,16 @@
               "type": "select",
               "options": [
                 {
-                  "label": "None", "value": ""
+                  "label": "None",
+                  "value": ""
                 },
                 {
-                  "label": "Dropped-Case Letter", "value": "drop_case_first_letter"
+                  "label": "Dropped-Case Letter",
+                  "value": "drop_case_first_letter"
                 },
                 {
-                  "label": "First-Line Bolded and Uppercase", "value": "first_line__bolded_uppercase"
+                  "label": "First-Line Bolded and Uppercase",
+                  "value": "first_line__bolded_uppercase"
                 }
               ],
               "label": "Select an optional feature for the paragraph"

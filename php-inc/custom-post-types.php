@@ -15,7 +15,7 @@
   //     ),
   //     'hierarchical'       => true,
   //     'public'             => true,
-  //     'menu_icon'          => 'dashicons-media-text',
+  //     'menu_icon'          => 'dashicon-media-text',
   //     'has_archive'        => true,
   //     'supports'           => array( 'title', 'editor', 'thumbnail' ),
   //     'publicly_queryable' => true,
