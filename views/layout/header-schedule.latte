@@ -341,6 +341,11 @@
 
 		<script>
 
+			/**
+			 * Hides a stage container when all of its presentation cards are filtered out.
+			 *
+			 * @param {HTMLElement} guideSlotContainer - The room container whose parent stage should be updated.
+			 */
 			const stageDisplayer = (guideSlotContainer) => {
 				let stageContainer = guideSlotContainer.parentElement.parentElement
 				let totalAllStageCards = Number(stageContainer.attributes[2].nodeValue)
@@ -355,6 +360,11 @@
 
 			}
 
+			/**
+			 * Hides a room container when all of its cards are filtered out and then updates the parent stage.
+			 *
+			 * @param {HTMLElement} card - A presentation card that may have been hidden by the search filter.
+			 */
 			const roomDisplayer = (card) => {
 				let guideSlotContainer = card.parentElement
 				let totalAllCards = Number(guideSlotContainer.attributes[1].nodeValue)
@@ -367,6 +377,11 @@
 
 			}
 
+			/**
+			 * Filters schedule cards by the current search term and hides empty rooms or stages.
+			 *
+			 * @param {Event} e - The input event containing the current search value.
+			 */
 			const filterByName = (e) => {
 				const items = document.querySelectorAll(".guide-slot_card")
 				const searchTerm = e.target.value.trim().toLowerCase()

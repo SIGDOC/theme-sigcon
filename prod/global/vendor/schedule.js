@@ -7,7 +7,12 @@
  * -- Rendered HTML of schedule data that is searchable via searchbar
  */
 
-// Show an element
+/**
+ * Expands a schedule section by setting its natural height and revealing it with
+ * the visible transition state.
+ *
+ * @param {HTMLElement} elem - The container element to expand.
+ */
 const show = (elem) => {
 	const getHeight = () => {
 		elem.style.display = 'grid'
@@ -27,7 +32,12 @@ const show = (elem) => {
 
 }
 
-// Hide an element
+/**
+ * Collapses a schedule section by animating its height to zero and hiding it once
+ * the transition ends.
+ *
+ * @param {HTMLElement} elem - The container element to collapse.
+ */
 const hide = (elem) => {
 	// Give the element a height to change from
 	elem.style.height = elem.scrollHeight + 'px'
@@ -52,6 +62,12 @@ const hide = (elem) => {
 */
 
 
+/**
+ * Toggles the open/closed state for a session room container based on the clicked
+ * trigger element and updates its accessibility state.
+ *
+ * @param {Event} e - The click event from the session toggle trigger.
+ */
 const toggleVisibility = (e) => {
 	let className = ".stage_container__"+(e.target.offsetParent.attributes.id.nodeValue).split("__")[1]
 	className = className.replaceAll("'", "")
@@ -69,6 +85,14 @@ const toggleVisibility = (e) => {
 	}
 }
 
+/**
+ * Groups schedule records by session type and then by room so each room can be
+ * rendered under its corresponding session block.
+ *
+ * @param {Object} perDayPerSession - Nested session data keyed by day and session.
+ * @param {string} roomKey - The field name used to group entries by room.
+ * @returns {{pdps: Object, room: Object}} The grouped data set with room buckets.
+ */
 const groupingRoomData = async (perDayPerSession, roomKey) => {
 	const dayKeys = Object.keys(perDayPerSession)
 	const perRoom = {}
@@ -90,6 +114,13 @@ const groupingRoomData = async (perDayPerSession, roomKey) => {
 	return {pdps: perDayPerSession, room: perRoom}
 }
 
+/**
+ * Renders the complete schedule UI for each day, including session titles, times,
+ * room groupings, and presentation cards.
+ *
+ * @param {Object} perDayPerSession - Schedule data grouped by day and session.
+ * @param {Object} perRoom - Room-grouped data keyed by session type.
+ */
 const writeDaySessions = async (perDayPerSession, perRoom) => {
 	// Presentation Card Total
 	let presCardsEntireSum = 0
@@ -347,6 +378,13 @@ const writeDaySessions = async (perDayPerSession, perRoom) => {
 
 }
 
+/**
+ * Sorts schedule items by day into nested groups keyed by session name.
+ *
+ * @param {Object} data - Data grouped by date.
+ * @param {string} sessionKey - The property used to split entries into session groups.
+ * @returns {Object} The grouped session data.
+ */
 const groupingDayData = async (data, sessionKey) => {
 	const keys = Object.keys(data)
 	const perSession = {}
@@ -365,6 +403,14 @@ const groupingDayData = async (data, sessionKey) => {
 	return perSession
 }
 
+/**
+ * Groups raw schedule entries by a single field such as date to create the first
+ * level of the schedule data hierarchy.
+ *
+ * @param {Array<Object>} data - The full schedule dataset.
+ * @param {string} dayKey - The property name to group by.
+ * @returns {Object} Grouped schedule data by the chosen field.
+ */
 const groupingData = async (data, dayKey) => {
 	const result = data.reduce( (r, a) => {
 			r[a[dayKey]] = r[a[dayKey]] || []
@@ -374,6 +420,12 @@ const groupingData = async (data, dayKey) => {
 	return result
 }
 
+/**
+ * Builds the schedule by grouping the CSV data by date, session, and room before
+ * rendering it into the page.
+ *
+ * @param {Array<Object>} sd - The parsed schedule records.
+ */
 const createSchedule = async (sd) => {
 	// GROUPBY DAYS
 	await groupingData(sd, "date").then(async (perDay) => {
@@ -388,6 +440,13 @@ const createSchedule = async (sd) => {
 
 }
 
+/**
+ * Fetches and parses the schedule CSV file into a JavaScript array of record
+ * objects using Papa Parse.
+ *
+ * @param {string} fp - The CSV file path or URL to load.
+ * @returns {Promise<Array<Object>>} Parsed schedule rows.
+ */
 const getData = (fp) => {
   return new Promise((resolve, reject) => {
 		Papa.parse(fp, {
